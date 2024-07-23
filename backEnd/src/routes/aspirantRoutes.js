@@ -3,9 +3,9 @@ const express = require('express');
 const router = express.Router();
 
 // ************ Controller Require ************
-const productsController = require('../controllers/aspirantController');
+const aspirantController = require('../controllers/aspirantController');
 
-/*** GET ALL PRODUCTS ***/ 
+/*** GET ALL ASPIRANTS ***/ 
 router.get('/', aspirantController.index); 
 
 module.exports = router;

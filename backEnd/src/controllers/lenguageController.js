@@ -1,5 +1,6 @@
+const fs = require('fs'); 
 const path = require('path');
-const db = require('../database/models/Lenguage');
+const db = require('../database/models');
 
 
 const dataController = {
