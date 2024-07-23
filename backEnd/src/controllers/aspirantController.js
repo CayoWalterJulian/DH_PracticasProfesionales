@@ -13,6 +13,13 @@ const Op = db.Sequelize.Op;
 
 
 const controller = {
+    //Show all aspirants
+    index: (req, res) => {
+		db.Aspirant.findAll()
+			.then(function(aspirants) {
+				res.render('aspirantView',{aspirantes: aspirants}); 
+			})
+	},
     // Formulario para iniciar sesión
     /*
     login: (req, res) => {
