@@ -28,7 +28,7 @@ const controller = {
 	// Create - Form to create
 	create: (req, res) => {
 		console.log("estoy en el create");
-		res.render('aspirantCreate');
+		res.render('aspirantCreatePrueba');
 	},
 	// Create -  Method to store
 	store: (req, res) => {
