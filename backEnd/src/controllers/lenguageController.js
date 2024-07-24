@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+const fs = require('fs'); 
+>>>>>>> cec327ab3233e76be13e54e437361039fd006294
 const path = require('path');
 const db = require('../database/models');
 

@@ -8,6 +8,12 @@ const cors = require('cors');
 //Ejecuto el llamado a mis rutas
 const indexRouter = require('./routes/index');
 const lenguageRoutes = require('./routes/lenguageRoutes');
+<<<<<<< HEAD
+=======
+const aspirantRoutes = require('./routes/aspirantRoutes');
+const areaRoutes = require('./routes/areaRoutes');
+//const experienceRoutes = require('./routes/experienceRoutes');
+>>>>>>> cec327ab3233e76be13e54e437361039fd006294
 //const moviesRoutes = require('./routes/moviesRoutes');
 //const genresRoutes = require('./routes/genresRoutes');
 
@@ -34,7 +40,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
+<<<<<<< HEAD
  app.use(lenguageRoutes);
+=======
+app.use('/lenguage', lenguageRoutes);
+app.use('/aspirant', aspirantRoutes);
+//app.use('/experienceRoutes', experienceRoutes);
+app.use('/area', areaRoutes);
+
+>>>>>>> cec327ab3233e76be13e54e437361039fd006294
 
 // app.use(moviesRoutes);
 // app.use(genresRoutes);
