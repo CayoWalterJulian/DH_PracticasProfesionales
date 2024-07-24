@@ -87,11 +87,19 @@ module.exports = (sequelize, dataTypes) => {
 
     Aspirant.associate = function (models) {
         Aspirant.hasMany(models.Area ,{
-            as: "area",
-            foreignKey: "id_area",
-            otherKey: 'DNI',
-            timestamps: false
+            as: "aspirant",
+            foreignKey: "dni_aspirant",
+           
         }) 
+        Aspirant.belongsToMany( models.Lenguage, {           
+            as: 'lenguages',
+            through: 'aspirant_lenguage',
+            foreignKey:'dni_aspirant',
+            otherKey: 'íd_lenguage',
+            timesTamps: false,
+        });
+
+
     }
     
 
