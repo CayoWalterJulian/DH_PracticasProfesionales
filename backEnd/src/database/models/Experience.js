@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = "Experience";  // esto debería estar en singular
     let cols = {
         id_experience: {
@@ -38,7 +38,8 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: false,
         deletedAt: false,
     }
-
+    
+    const Experience = sequelize.define(alias, cols, config);
     // Definir las asociaciones con otros modelos si es necesario
     Experience.associate = function(models) {
         // Ejemplo de asociación con el modelo Aspirant (ejemplo hipotético)
