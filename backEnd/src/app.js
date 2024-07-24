@@ -9,7 +9,7 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const lenguageRoutes = require('./routes/lenguageRoutes');
 const aspirantRoutes = require('./routes/aspirantRoutes');
-//const areaRoutes = require('./routes/areaRoutes');
+const areaRoutes = require('./routes/areaRoutes');
 //const experienceRoutes = require('./routes/experienceRoutes');
 //const moviesRoutes = require('./routes/moviesRoutes');
 //const genresRoutes = require('./routes/genresRoutes');
@@ -40,7 +40,7 @@ app.use('/', indexRouter);
 app.use('/lenguage', lenguageRoutes);
 app.use('/aspirant', aspirantRoutes);
 //app.use('/experienceRoutes', experienceRoutes);
-//app.use('/areaRoutes', areaRoutes);
+app.use('/area', areaRoutes);
 
 
 // app.use(moviesRoutes);

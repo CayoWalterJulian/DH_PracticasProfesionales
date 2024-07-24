@@ -84,8 +84,8 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Aspirant = sequelize.define(alias, cols, config);
-
-    /*User.associate = (models) => {
+    /*
+    User.associate = (models) => {
     User.hasMany(models.CompraCarrito, {
         as: "compracarrito",
         foreingKey: "user_id",
