@@ -84,25 +84,16 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Aspirant = sequelize.define(alias, cols, config);
-    /*
-    User.associate = (models) => {
-    User.hasMany(models.CompraCarrito, {
-        as: "compracarrito",
-        foreingKey: "user_id",
-        otherKey: 'shopcart_id',
-        timestamps: false
-        })
-    }  */
 
-
-    // Aquí podrías definir asociaciones si existen
-    // Por ejemplo, si un usuario puede tener muchas órdenes:
-    // User.associate = (models) => {
-    //     User.hasMany(models.Order, {
-    //         as: "orders",
-    //         foreignKey: "user_id"
-    //     });
-    // }
+    Aspirant.associate = function (models) {
+        Aspirant.hasMany(models.Area ,{
+            as: "area",
+            foreignKey: "id_area",
+            otherKey: 'DNI',
+            timestamps: false
+        }) 
+    }
+    
 
 
     return Aspirant;
