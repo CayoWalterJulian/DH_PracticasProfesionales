@@ -99,7 +99,12 @@ module.exports = (sequelize, dataTypes) => {
             timesTamps: false,
         });
 
-
+    Aspirant.belongsTo(models.Experience, {
+        as: "experience",
+        foreignKey: 'id_experience',
+        otherKey: "DNI",
+        timestamps: false
+    });
     }
     
 

@@ -2,32 +2,32 @@ module.exports = (sequelize, DataTypes) => {
     let alias = "Experience";  // esto debería estar en singular
     let cols = {
         id_experience: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         position: {
-            type: DataTypes.STRING(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         company: {
-            type: DataTypes.STRING(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         description: {
-            type: DataTypes.TEXT,
+            type: dataTypes.TEXT,
             allowNull: false
         },
         start_date: {
-            type: DataTypes.DATE,
+            type: dataTypes.DATE,
             allowNull: false
         },
         end_date: {
-            type: DataTypes.DATE,
+            type: dataTypes.DATE,
             allowNull: false
         },
         dni_aspirant: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -38,7 +38,6 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: false,
         deletedAt: false,
     }
-    
     const Experience = sequelize.define(alias, cols, config);
     // Definir las asociaciones con otros modelos si es necesario
     Experience.associate = function(models) {
