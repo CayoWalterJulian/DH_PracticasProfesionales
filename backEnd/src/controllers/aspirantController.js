@@ -7,7 +7,7 @@ const path = require('path');
 /* -------------sequelize------------------ */
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const Op = db.Sequelize.Op;
+const Op = db.sequelize.Op;
 
 
 const controller = {
