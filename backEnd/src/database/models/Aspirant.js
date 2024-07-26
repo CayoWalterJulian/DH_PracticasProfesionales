@@ -91,13 +91,13 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_area",
             otherKey: "DNI",
             timestamps: false
-        }) 
-    Aspirant.belongsTo(models.Experience, {
-        as: "experience",
-        foreignKey: 'id_experience',
-        otherKey: "DNI",
-        timestamps: false
-    });
+        }) ;
+        Aspirant.hasMany(models.Experience, {
+            as: "experience",
+            foreignKey: 'id_experience',
+            otherKey: "DNI",
+            timestamps: false
+        })
     }
     
 

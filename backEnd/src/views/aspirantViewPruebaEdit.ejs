@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Aspirante</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <form action="/aspirant/<%= aspirante.DNI %>?_method=PUT" method="POST">
+        <div><label for="dni">DNI: </label>
+        <input type="text" id="DNI" name="DNI" value="<%= aspirante.DNI %>" required ></div>
+        <div><label for="name">Nombre/s: </label>
+        <input type="text" id="name" name="name" value="<%= aspirante.name %>" required></div>
+        <div><label for="lastname">Apellido/s:</label>
+        <input type="text" id="lastname" name="lastname" value="<%= aspirante.lastname %>" required></div>
+        <div></div><label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="<%= aspirante.email %>" required></div>
+        <div><label for="password">Password:</label>
+        <input type="text" id="password" name="password" value="<%= aspirante.password %>" required></div>
+        <div></div><label for="phone">Telefono:</label>
+        <input type="text" id="phone" name="phone" value="<%= aspirante.phone %>" required></div>
+        <div><label for="linkedin">LinkedIn:</label>
+        <input type="text" id="linkedin" name="linkedin" value="<%= aspirante.linkedin %>" required></div>
+        <div><label for="birthdate">Fecha de nacimiento:</label>
+        <input type="date" id="birthdate" name="birthdate" value="<%= aspirante.birthdate %>" required></div>
+        <div><label for="gender">Género:</label>
+        <input type="text" id="gender" name="gender" value="<%= aspirante.gender %>" required></div>
+        <div></div><label for="country_residence">País de residencia:</label>
+        <input type="text" id="country_residence" name="country_residence" value="<%= aspirante.country_residence %>" required></div>
+        <div><label for="profession">Profesión:</label>
+        <input type="text" id="profession" name="profession" value="<%= aspirante.profession %>" required></div>
+        <div><label for="avatar">Imagen</label>
+        <input type="file" name="image" id="image" value="<%= aspirante.image %>" required></div>
+        <div><label for="study_level">Nivel de estudio:</label>
+        <input type="text" id="study_level" name="study_level" value="<%= aspirante.study_level %>" required></div>
+        <div><label for="avatar">CV</label>
+        <input type="file" name="CV" id="CV" value="<%= aspirante.CV %>" required></div>
+        <div><label for="time_availibity">Tiempo disponible:</label>
+        <input type="text" id="time_availibity" name="time_availibity" value="<%= aspirante.time_availibity %>" required></div>
+        <div><button type="submit">Confirmar</button></div>
+    </form>
+</body>
+
+</html>

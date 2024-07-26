@@ -11,105 +11,69 @@
 
 <body>
     <!-- encabezado -->
-    <%- include('partials/header') %>
     <form action="/aspirant/store" method="POST">
         <div class="label-form">
-            <label for="dni">DNI:
-            </label>
+            <label for="dni">DNI:</label>
             <input type="text" id="DNI" name="DNI" >
         </div>
         <div class="label-form">
-            <label for="name">Nombre/s:
-            </label>
+            <label for="name">Nombre/s:</label>
             <input type="text" id="name" name="name" >
         </div>
         <div class="label-form">
-            <label for="lastname">Apellido/s:
-            </label>
+            <label for="lastname">Apellido/s:</label>
             <input type="text" id="lastname" name="lastname" >
         </div>
         <div class="label-form">
-            <label for="email">Caracteristicas del producto:
-            </label>
-            <input type="text" id="product_detail" name="product_detail" >
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" >
         </div>
         <div class="label-form">
-            <label for="category">Categoría del producto:
-            </label>
-            <input type="text" id="product_category" name="product_category" >
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" >
         </div>
         <div class="label-form">
-            <label for="price">Precio del producto:
-            </label>
-            <input type="text" id="prduct_price" name="product_price" >
+            <label for="phone">Telefono:</label>
+            <input type="text" id="phone" name="phone" >
         </div>
         <div class="label-form">
-            <label for="discount">Descuento del producto:
-            </label>
-            <input type="text" id="product_discount" name="product_discount" >
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" id="linkedin" name="linkedin" >
         </div>
         <div class="label-form">
-            <label for="avatar">Imagen</label>
-            <input type="file" name="product_img" id="product_img">
-        </div>
-        <button type="submit">Crear nuevo producto</button>
-        </button>
-    </form>
-
-
-
-
-
-
-
-    <!-- pie de pagina -->
-    <%- include('partials/footer') %>
-</body>
-            <label for="name">Nombre del producto:
-            </label>
-            <input type="text" id="product_name" name="product_name" >
+            <label for="birthdate">Fecha de nacimiento:</label>
+            <input type="date" id="birthdate" name="birthdate" >
         </div>
         <div class="label-form">
-            <label for="brand">Marca del producto:
-            </label>
-            <input type="text" id="product_brand" name="product_brand" >
+            <label for="gender">Género:</label>
+            <input type="text" id="gender" name="gender" >
         </div>
         <div class="label-form">
-            <label for="category">Caracteristicas del producto:
-            </label>
-            <input type="text" id="product_detail" name="product_detail" >
+            <label for="country_residence">País de residencia:</label>
+            <input type="text" id="country_residence" name="country_residence" >
         </div>
         <div class="label-form">
-            <label for="category">Categoría del producto:
-            </label>
-            <input type="text" id="product_category" name="product_category" >
-        </div>
-        <div class="label-form">
-            <label for="price">Precio del producto:
-            </label>
-            <input type="text" id="prduct_price" name="product_price" >
-        </div>
-        <div class="label-form">
-            <label for="discount">Descuento del producto:
-            </label>
-            <input type="text" id="product_discount" name="product_discount" >
+            <label for="profession">Profesión:</label>
+            <input type="text" id="profession" name="profession" >
         </div>
         <div class="label-form">
             <label for="avatar">Imagen</label>
-            <input type="file" name="product_img" id="product_img">
+            <input type="file" name="image" id="image">
         </div>
-        <button type="submit">Crear nuevo producto</button>
-        </button>
+        <div class="label-form">
+            <label for="study_level">Nivel de estudio:</label>
+            <input type="text" id="study_level" name="study_level" >
+        </div>
+        <div class="label-form">
+            <label for="avatar">CV</label>
+            <input type="file" name="CV" id="CV">
+        </div>
+        <div class="label-form">
+            <label for="time_availibity">Tiempo disponible:</label>
+            <input type="text" id="time_availibity" name="time_availibity" >
+        </div>
+        <button type="submit">Confirmar</button>
     </form>
-
-
-
-
-
-
-
-    <!-- pie de pagina -->
-    <%- include('partials/footer') %>
 </body>
 
 </html>
