@@ -1,6 +1,5 @@
 const db = require('../../database/models');
 const sequelize = db.sequelize;
-const Op = db.sequelize.Op;
 
 const dataController = {
     list: async (req, res) => {
@@ -26,16 +25,13 @@ const dataController = {
                     time: aspirant.time_availibity
                 })),
                 status: 200
-
             };
             res.json(response)
         } catch (error) {
             console.error("Error al obtener la lista de productos", error);
             res.status(500).json({error: "No se pudo obtener la lista de productos"});
         }
-
-    }
-    
+    }   
 }
 
 module.exports = dataController;
