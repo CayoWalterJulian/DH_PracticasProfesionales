@@ -16,7 +16,7 @@
     <h1>LISTADO DE AREA</h1>
     <br>
     <p>
-        <a class="botonAgregar" href="/">Agregar un puesto de trabajo</a>
+        <a class="botonAgregar" href="/area/create">Agregar un puesto de trabajo</a>
         <a class="botonVolver" href="/">inicio</a>
 
     </p>
@@ -24,7 +24,7 @@
     <ul>
         <% for( let i = 0; i < area.length; i++ ) { %>
         <li>
-            <a href="/"><%= area[i].name %></a>
+            <a href="/"><%= area[i].name_area %></a>
         </li>
         <% } %>
 
