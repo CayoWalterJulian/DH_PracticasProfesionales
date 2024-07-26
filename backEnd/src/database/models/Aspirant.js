@@ -92,7 +92,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "DNI",
             timestamps: false
         }) 
-    Aspirant.belongsTo(models.Experience, {
+    Aspirant.hasMany(models.Experience, {
         as: "experience",
         foreignKey: 'id_experience',
         otherKey: "DNI",
