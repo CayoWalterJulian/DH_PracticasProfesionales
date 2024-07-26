@@ -22,7 +22,7 @@ const controller = {
 	detail: (req, res) => {
 		db.Aspirant.findByPk(req.params.id)
 			.then(function(aspirant) {
-				res.render('aspirantDetail', {aspirante: aspirant});
+				res.render('aspirantViewPruebaDetail', {aspirante: aspirant});
 			})
 	},
 	// Create - Form to create
@@ -33,46 +33,57 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		console.log(req.body);
-		/*if (req.body.product_discount == 0){
-			req.body.product_discount = null;
-		}*/
 		db.Aspirant.create ({
-				/*product_name: req.body.product_name,
-				product_brand: req.body.product_brand,
-				product_detail: req.body.product_detail,
-				product_category: req.body.product_category,
-				product_price: req.body.product_price,
-				product_discount: req.body.product_discount,
-				product_img: req.body.product_img*/
+                dni: req.body.DNI,
+				name: req.body.name,
+                lastname: req.body.lastname,
+				email: req.body.email,
+				phone: req.body.phone,
+				linkedin: req.body.linkedin,
+				birthdate: req.body.birthdate,
+				gender: req.body.gender,
+				country_residence: req.body.residence,
+				profession: req.body.profession,
+				image: req.body.image,
+				study_level: req.body.study_level,
+				cv: req.body.CV,
+				time_availibity: req.body.time_availibity                
 			}).then(() =>
-				res.redirect('/adm'));
+				res.redirect('/'));
 	},
 	// Update - Form to edit
 	edit: (req, res) => {
 		console.log("estoy en el edit");
 		db.Aspirant.findByPk(req.params.id)
 		.then(function(aspirant) {
-			res.render('aspirantLoad', {aspirante: aspirant});
+			res.render('aspirantViewPruebaEdit', {aspirante: aspirant});
 		})
 	},
 	// Update - Method to update
 	update: (req, res) => {
 		console.log('estoy en el edit');
-		db.Aspirante.update({
-			/*product_name: req.body.product_name,
-			product_brand: req.body.product_brand,
-			product_detail: req.body.product_detail,
-			product_category: req.body.product_category,
-			product_price: req.body.product_price,
-			product_discount: req.body.product_discount,
-			product_img: req.body.product_img*/
+		db.Aspirant.update({
+            DNI: req.body.DNI,
+            name: req.body.name,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            phone: req.body.phone,
+            linkedin: req.body.linkedin,
+            birthdate: req.body.birthdate,
+            gender: req.body.gender,
+            country_residence: req.body.residence,
+            profession: req.body.profession,
+            image: req.body.image,
+            study_level: req.body.study_level,
+            CV: req.body.CV,
+            time_availibity: req.body.time_availibity
 		},
 		{
 			where:{
 				dni: req.params.dni
 			}
 		}).then(() => 
-			res.redirect('/adm'));
+			res.redirect('/'));
 	},
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
