@@ -12,7 +12,7 @@
 <body>
     <form action="/aspirant/<%= aspirante.DNI %>?_method=PUT" method="POST">
         <div><label for="dni">DNI: </label>
-        <input type="text" id="DNI" name="DNI" value="<%= aspirante.DNI %>" required ></div>
+        <input type="number" id="DNI" name="DNI" value="<%= aspirante.DNI %>" required ></div>
         <div><label for="name">Nombre/s: </label>
         <input type="text" id="name" name="name" value="<%= aspirante.name %>" required></div>
         <div><label for="lastname">Apellido/s:</label>

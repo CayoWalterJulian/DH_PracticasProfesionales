@@ -34,19 +34,20 @@ const controller = {
 	store: (req, res) => {
 		console.log(req.body);
 		db.Aspirant.create ({
-                dni: req.body.DNI,
+                DNI: req.body.DNI,
 				name: req.body.name,
                 lastname: req.body.lastname,
 				email: req.body.email,
+                password: req.body.password,
 				phone: req.body.phone,
 				linkedin: req.body.linkedin,
 				birthdate: req.body.birthdate,
 				gender: req.body.gender,
-				country_residence: req.body.residence,
+				country_residence: req.body.country_residence,
 				profession: req.body.profession,
 				image: req.body.image,
 				study_level: req.body.study_level,
-				cv: req.body.CV,
+				CV: req.body.CV,
 				time_availibity: req.body.time_availibity                
 			}).then(() =>
 				res.redirect('/'));
@@ -62,16 +63,18 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 		console.log('estoy en el edit');
+        console.log(req.body);
 		db.Aspirant.update({
             DNI: req.body.DNI,
             name: req.body.name,
             lastname: req.body.lastname,
             email: req.body.email,
+            password: req.body.password,
             phone: req.body.phone,
             linkedin: req.body.linkedin,
             birthdate: req.body.birthdate,
             gender: req.body.gender,
-            country_residence: req.body.residence,
+            country_residence: req.body.country_residence,
             profession: req.body.profession,
             image: req.body.image,
             study_level: req.body.study_level,
@@ -80,7 +83,7 @@ const controller = {
 		},
 		{
 			where:{
-				dni: req.params.dni
+				DNI: req.params.DNI
 			}
 		}).then(() => 
 			res.redirect('/'));
@@ -89,7 +92,7 @@ const controller = {
 	destroy : (req, res) => {
 		db.Aspirant.destroy({
 			where: {
-				dni : req.params.dni
+				DNI : req.params.DNI
 			}
 		}).then( () =>
 			res.redirect('/'));
