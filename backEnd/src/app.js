@@ -8,14 +8,14 @@ const cors = require('cors');
 //Ejecuto el llamado a mis rutas
 const indexRouter = require('./routes/index');
 const lenguageRoutes = require('./routes/lenguageRoutes');
-const aspirantRoutes = require('./routes/aspirantRoutes');
+const aspirantRoutes = require('./routes/aspirantsRoutes');
 const areaRoutes = require('./routes/areaRoutes');
 //const experienceRoutes = require('./routes/experienceRoutes');
 //const moviesRoutes = require('./routes/moviesRoutes');
 //const genresRoutes = require('./routes/genresRoutes');
 
 //Aquí llamo a la ruta de las api de movies
-// const apiMoviesRouter = require('./routes/api/movies')
+ const apiAspirantsRouter = require('./routes/api/apirants')
 // //Aquí llamo a la ruta de las api de actors
 // const apiGenresRouter = require('./routes/api/genres')
 // //Aquí llamo a la ruta de las api de actors
@@ -46,7 +46,7 @@ app.use('/area', areaRoutes);
 // app.use(moviesRoutes);
 // app.use(genresRoutes);
 // //Aquí creo la colección de mis recursos de movies (APIs)
-// app.use('/api/movies',apiMoviesRouter);
+  app.use('/api/aspirants',apiAspirantsRouter);
 // app.use('/api/actors',apiActorsRouter);
 // app.use('/api/genres',apiGenresRouter);
 

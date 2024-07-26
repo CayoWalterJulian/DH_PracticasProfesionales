@@ -95,14 +95,14 @@ module.exports = (sequelize, dataTypes) => {
             as: 'lenguages',
             through: 'aspirant_lenguage',
             foreignKey:'dni_aspirant',
-            otherKey: 'íd_lenguage',
+            otherKey: 'id_lenguage',
             timesTamps: false,
         });
 
     Aspirant.belongsTo(models.Experience, {
         as: "experience",
-        foreignKey: 'id_experience',
-        otherKey: "DNI",
+        foreignKey: 'DNI',
+        otherKey: "id_experience",
         timestamps: false
     });
     }
