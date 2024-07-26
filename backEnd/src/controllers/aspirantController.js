@@ -83,7 +83,7 @@ const controller = {
 		},
 		{
 			where:{
-				DNI: req.params.DNI
+				DNI: req.params.id
 			}
 		}).then(() => 
 			res.redirect('/'));
