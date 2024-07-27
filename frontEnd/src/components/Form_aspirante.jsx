@@ -1,75 +1,27 @@
 import React from 'react';
-import icon_user from "../assets/images/icon-user.png";
 import icon_picture from "../assets/images/icon-picture.png";
+import image_form from "../assets/images/image-form.png";
+import { CgProfile } from "react-icons/cg";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const Form_aspirante = () => {
   return (
-    <form className='p-5'>
-      <div className="space-y-12">
-        <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Cuenta</h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">
-            This information will be displayed publicly so be careful what you share.
-          </p>
+    <form className='p-4 pt-8 max-w-screen-lg mx-auto'>
+      <div className="space-y-6">
+        <div className='relative'>
+          <img src={image_form} alt="image_form" className="rounded-xl w-full h-full object-cover" />
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-3">
-              <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                Usuario
-              </label>
-              <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    autoComplete="username"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 px-2"
-                  />
-                </div>
-              </div>
-            </div>          
-
-            <div className="sm:col-span-3">
-              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                Contraseña
-              </label>
-              <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="password"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 px-2"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="max-w-sm mb-5">
-              <label htmlFor="hs-toggle-password-with-checkbox" className="block text-sm mb-2 dark:text-white">Current password</label>
-              <input id="hs-toggle-password-with-checkbox" type="password" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter current password" value="12345qwerty" />
-
-              <div className="flex mt-4">
-                <input data-hs-toggle-password='{
-                    "target": "#hs-toggle-password-with-checkbox"
-                  }' id="hs-toggle-password-checkbox" type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
-                <label htmlFor="hs-toggle-password-checkbox" className="text-sm text-gray-500 ms-3 dark:text-neutral-400">Show password</label>
-              </div>
-            </div>
-
-          </div>
+          <p className='absolute text-white rounded-xl inset-0 flex items-center justify-center  bg-gray-800 bg-opacity-40 text-md sm:text-xl md:text-3xl lg:text-4xl px-8 '>Completa el formulario y encontra el trabajo que deseas con un solo click</p>
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Informacion Personal</h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+          <h2 className="text-base font-semibold leading-7 text-gray-900 flex items-center">Formulario de registro <CgProfile className='text-2xl ml-2' /></h2>
+          <p className="mt-1 text-sm leading-6 text-gray-600 italic">Los campos con <span className='text-red-400'>*</span> son obligatorios</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                Nombre
+                Nombre <span className='text-red-400'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -84,7 +36,7 @@ const Form_aspirante = () => {
 
             <div className="sm:col-span-3">
               <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                Apellido
+                Apellido <span className='text-red-400'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -99,7 +51,7 @@ const Form_aspirante = () => {
 
             <div className="sm:col-span-3">
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Correo
+                Correo <span className='text-red-400'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -113,8 +65,23 @@ const Form_aspirante = () => {
             </div>
 
             <div className="sm:col-span-3">
+              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                Contraseña <span className='text-red-400'>*</span>
+              </label>
+              <div className="mt-2">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="password"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
               <label htmlFor="dni" className="block text-sm font-medium leading-6 text-gray-900">
-                DNI
+                DNI <span className='text-red-400'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -129,7 +96,7 @@ const Form_aspirante = () => {
 
             <div className="sm:col-span-3">
               <label htmlFor="phone-number" className="block text-sm font-medium leading-6 text-gray-900">
-                Telefono
+                Telefono <span className='text-red-400'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -144,16 +111,16 @@ const Form_aspirante = () => {
 
             <div className="sm:col-span-3">
               <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                Pais de recidencia
+                Pais de recidencia <span className='text-red-400'>*</span>
               </label>
-              <div className="mt-2">
+              <div className="mt-2 relative">
                 <select
                   id="country"
                   name="country"
                   autoComplete="country"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
-                  <option value="" selected disabled>Seleccione un pais</option>
+                  <option selected disabled>Seleccionar...</option>
                   <option value="argentina">Argentina</option>
                   <option value="bahamas">Bahamas</option>
                   <option value="barbados">Barbados</option>
@@ -189,6 +156,10 @@ const Form_aspirante = () => {
                   <option value="uruguay">Uruguay</option>
                   <option value="venezuela">Venezuela</option>
                 </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
               </div>
             </div>
 
@@ -209,7 +180,7 @@ const Form_aspirante = () => {
 
             <div className="sm:col-span-3">
               <label htmlFor="birthdate" className="block text-sm font-medium leading-6 text-gray-900">
-                Fecha nacimiento
+                Fecha nacimiento <span className='text-red-400'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -224,75 +195,166 @@ const Form_aspirante = () => {
 
             <div className="sm:col-span-3">
               <label htmlFor="gender" className="block text-sm font-medium leading-6 text-gray-900">
-                Genero
+                Genero <span className="text-red-400">*</span>
               </label>
-              <div className="mt-2">
+              <div className="mt-2 relative">
                 <select
                   id="gender"
                   name="gender"
                   autoComplete="gender"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
-                  <option selected disabled>Seleccione su genero</option>
-                  <option value="female">Female</option>
-                  <option value="male">Male</option>
-                  <option value="other">Other</option>
+                  <option selected disabled>Seleccionar...</option>
+                  <option value="female">Femenino</option>
+                  <option value="male">Masculino</option>
+                  <option value="other">Otro</option>
                 </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
               </div>
             </div>
 
             <div className="sm:col-span-3">
               <label htmlFor="profession" className="block text-sm font-medium leading-6 text-gray-900">
-                Profesión
+                Profesión <span className='text-red-400'>*</span>
               </label>
-              <div className="mt-2">
+              <div className="mt-2 relative">
                 <select
                   id="profession"
                   name="profession"
                   autoComplete="profession"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
-                  <option value="" selected disabled>Seleccione una profeción</option>
-                  <option value="software_engineer">Software Engineer</option>
-                  <option value="web_developer">Web Developer</option>
-                  <option value="data_scientist">Data Scientist</option>
-                  <option value="system_administrator">System Administrator</option>
-                  <option value="network_engineer">Network Engineer</option>
-                  <option value="cloud_architect">Cloud Architect</option>
-                  <option value="cyber_security_specialist">Cyber Security Specialist</option>
-                  <option value="database_administrator">Database Administrator</option>
-                  <option value="mobile_app_developer">Mobile App Developer</option>
-                  <option value="devops_engineer">DevOps Engineer</option>
-                  <option value="ux_ui_designer">UX/UI Designer</option>
-                  <option value="game_developer">Game Developer</option>
-                  <option value="it_support_specialist">IT Support Specialist</option>
-                  <option value="ai_ml_engineer">AI/ML Engineer</option>
-                  <option value="technical_writer">Technical Writer</option>
-                  <option value="blockchain_developer">Blockchain Developer</option>
-                  <option value="robotics_engineer">Robotics Engineer</option>
-                  <option value="full_stack_developer">Full Stack Developer</option>
-                  <option value="front_end_developer">Front End Developer</option>
-                  <option value="back_end_developer">Back End Developer</option>
-                  <option value="quality_assurance_analyst">Quality Assurance Analyst</option>
-                  <option value="product_manager">Product Manager</option>
-                  <option value="business_analyst">Business Analyst</option>
-                  <option value="it_project_manager">IT Project Manager</option>
+                  <option value="doctor">Doctor</option>
+                  <option value="engineer">Ingeniero</option>
+                  <option value="teacher">Maestro</option>
+                  <option value="lawyer">Abogado</option>
+                  <option value="nurse">Enfermero</option>
+                  <option value="architect">Arquitecto</option>
+                  <option value="scientist">Científico</option>
+                  <option value="artist">Artista</option>
+                  <option value="chef">Chef</option>
+                  <option value="journalist">Periodista</option>
+                  <option value="mechanic">Mecánico</option>
+                  <option value="pilot">Piloto</option>
+                  <option value="programmer">Programador</option>
+                  <option value="photographer">Fotógrafo</option>
+                  <option value="dentist">Dentista</option>
+                  <option value="pharmacist">Farmacéutico</option>
+                  <option value="plumber">Fontanero</option>
+                  <option value="electrician">Electricista</option>
+                  <option value="carpenter">Carpintero</option>
+                  <option value="accountant">Contador</option>
                 </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="preference-area" className="block text-sm font-medium leading-6 text-gray-900">
+                Area de preferencia <span className='text-red-400'>*</span>
+              </label>
+              <div className="mt-2 relative">
+                <select
+                  id="preference-area"
+                  name="preference-area"
+                  autoComplete="preference-area"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                >
+                  <option value="technology">Tecnología</option>
+                  <option value="healthcare">Salud</option>
+                  <option value="education">Educación</option>
+                  <option value="finance">Finanzas</option>
+                  <option value="engineering">Ingeniería</option>
+                  <option value="law">Derecho</option>
+                  <option value="arts">Artes</option>
+                  <option value="science">Ciencia</option>
+                  <option value="hospitality">Hostelería</option>
+                  <option value="media">Medios de Comunicación</option>
+                  <option value="construction">Construcción</option>
+                  <option value="sales">Ventas</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="human_resources">Recursos Humanos</option>
+                  <option value="logistics">Logística</option>
+                  <option value="real_estate">Bienes Raíces</option>
+                  <option value="administration">Administración</option>
+                  <option value="transportation">Transporte</option>
+                  <option value="public_services">Servicios Públicos</option>
+                  <option value="it">Tecnologías de la Información</option>
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="idioma" className="block text-sm font-medium leading-6 text-gray-900">
+                Idioma <span className='text-red-400'>*</span>
+              </label>
+              <div className="mt-2 relative">
+                <select
+                  id="idioma"
+                  name="idioma"
+                  autoComplete="idioma"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                >
+                  <option selected disabled>Seleccionar...</option>
+                  <optgroup label='Ingles'>
+                    <option value="english_basic">Básico</option>
+                    <option value="english_intermediate">Intermedio</option>
+                    <option value="english_advanced">Avanzado</option>
+                  </optgroup>
+
+                  <optgroup label='Español'>
+                    <option value="spanish_basic">Español - Básico</option>
+                    <option value="spanish_intermediate">Español - Intermedio</option>
+                    <option value="spanish_advanced">Español - Avanzado</option>
+                  </optgroup>
+
+                  <optgroup label='Francés'>
+                    <option value="french_basic">Francés - Básico</option>
+                    <option value="french_intermediate">Francés - Intermedio</option>
+                    <option value="french_advanced">Francés - Avanzado</option>
+                  </optgroup>
+
+                  <optgroup label='Portugués'>
+                    <option value="portuguese_basic">Portugués - Básico</option>
+                    <option value="portuguese_intermediate">Portugués - Intermedio</option>
+                    <option value="portuguese_advanced">Portugués - Avanzado</option>
+                  </optgroup>
+
+                  <optgroup label='Chino'>
+                    <option value="chinese_basic">Chino - Básico</option>
+                    <option value="chinese_intermediate">Chino - Intermedio</option>
+                    <option value="chinese_advanced">Chino - Avanzado</option>
+                  </optgroup>
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
               </div>
             </div>
 
             <div className="sm:col-span-3">
               <label htmlFor="study-level" className="block text-sm font-medium leading-6 text-gray-900">
-                Nivel de estudio
+                Nivel de estudio <span className='text-red-400'>*</span>
               </label>
-              <div className="mt-2">
+              <div className="mt-2 relative">
                 <select
                   id="study-level"
                   name="study-level"
                   autoComplete="study-level"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
-                  <option value="" selected disabled>Seleccione su nivel de studio</option>
+                  <option value="" selected disabled>Seleccionar...</option>
                   <option value="primaria">Primaria</option>
                   <option value="secundaria">Secundaria</option>
                   <option value="bachillerato">Bachillerato</option>
@@ -301,87 +363,91 @@ const Form_aspirante = () => {
                   <option value="maestria">Maestría</option>
                   <option value="doctorado">Doctorado</option>
                   <option value="postdoctorado">Postdoctorado</option>
-                  <option value="otro">Otro</option>
                 </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
               </div>
             </div>
 
             <div className="sm:col-span-3">
               <label htmlFor="time-availability" className="block text-sm font-medium leading-6 text-gray-900">
-                Tiempo disponible
+                Tiempo disponible <span className='text-red-400'>*</span>
               </label>
-              <div className="mt-2">
+              <div className="mt-2 relative">
                 <select
                   id="time-availability"
                   name="time-availability"
                   autoComplete="time-availability"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 px-2"
+                  className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
-                  <option value="" selected disabled>Seleccione su tiempo disponible</option>
-                  <option value="jornada_completa">Jornada Completa: Generalmente 8 horas al día, 40 horas semanales.</option>
-                  <option value="jornada_parcial">Jornada Parcial: Menos de 40 horas a la semana, con horarios flexibles.</option>
-                  <option value="jornada_intensiva">Jornada Intensiva: Trabajo concentrado en menos días, con horas más largas por día.</option>
-                  <option value="jornada_continua">Jornada Continua: Sin interrupciones durante el día, ejemplo: 9:00 a 17:00.</option>
-                  <option value="jornada_partida">Jornada Partida: Dividida en dos períodos durante el día, ejemplo: 9:00 a 13:00 y 16:00 a 20:00.</option>
-                  <option value="jornada_nocturna">Jornada Nocturna: Trabajo en horas de la noche, generalmente de 22:00 a 6:00.</option>
-                  <option value="jornada_rotativa">Jornada Rotativa: Cambios de turno de forma periódica, ejemplo: mañana, tarde y noche.</option>
-                  <option value="jornada_flexible">Jornada Flexible: Permite ajustar las horas de entrada y salida.</option>
-                  <option value="jornada_a_turnos">Jornada a Turnos: Trabajo en diferentes turnos, que pueden variar.</option>
-                  <option value="jornada_medio_tiempo">Jornada de Medio Tiempo: Generalmente alrededor de 20 horas a la semana.</option>
-                  <option value="jornada_fin_semana">Jornada de Fin de Semana: Trabajo exclusivamente durante los fines de semana.</option>
+                  <option value="" selected disabled>Seleccionar...</option>
+                  <option value="full_time">Tiempo completo</option>
+                  <option value="part_time">Tiempo parcial</option>
                 </select>
-              </div>
-            </div>
 
-            <div className="col-span-full">
-              <label htmlFor="photo" className="block text-sm font-medium leading-6 text-gray-900">
-                Photo
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                  <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
+                </div>
+              </div>
+            </div>          
+
+            <div className="sm:col-span-3">
+              <label htmlFor="cv-pdf" className="block text-sm font-medium leading-6 text-gray-900">
+                Curriculum
               </label>
-              <div className="mt-2 flex items-center gap-x-3">
-                <img src={icon_user} aria-hidden="true" className="h-12 w-12 text-gray-300" />
-                <button
-                  type="button"
-                  className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                >
-                  Change
-                </button>
+              <div className="mt-2 flex justify-center items-center">
+                <input
+                  id="cv-pdf"
+                  type="file"
+                  accept=".jpg,.jpeg,.png"
+                  className="block w-full text-gray-900 sm:text-sm sm:leading-6 py-1"
+                />
               </div>
             </div>
 
             <div className="col-span-full">
-              <label htmlFor="cover-photo" className="block text-sm font-medium leading-6 text-gray-900">
-                Cover photo
+              <label htmlFor="picture-profile-container" className="block text-sm font-medium leading-6 text-gray-900">
               </label>
               <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                 <div className="text-center">
                   <img src={icon_picture} aria-hidden="true" className="mx-auto h-12 w-12 text-gray-300" />
                   <div className="mt-4 flex text-sm leading-6 text-gray-600">
                     <label
-                      htmlFor="file-upload"
+                      htmlFor="picture-profile"
                       className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                     >
-                      <span>Upload a file</span>
-                      <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                      <span>Cargar una imagen</span>
+                      <input
+                        id="picture-profile"
+                        name="picture-profile"
+                        type="file"
+                        accept=".jpg,.jpeg,.png"
+                        className="sr-only" />
                     </label>
-                    <p className="pl-1">or drag and drop</p>
+                    <p className="pl-1">o arrástrala y suéltala</p>
                   </div>
-                  <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                  <p className="text-xs leading-5 text-gray-600">PNG, JPG, JPEG hasta 10MB</p>
                 </div>
               </div>
             </div>
+      
           </div>
         </div>
       </div>
 
+      
+
       <div className="mt-6 flex items-center justify-end gap-x-6">
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
-          Cancel
+          Cancelar
         </button>
         <button
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          Save
+          Registrarse
         </button>
       </div>
     </form>
