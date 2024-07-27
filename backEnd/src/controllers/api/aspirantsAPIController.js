@@ -2,6 +2,7 @@ const db = require('../../database/models');
 const sequelize = db.sequelize;
 
 const dataController = {
+    
     list: async (req, res) => {
         try {
             const aspirant = await db.Aspirant.findAll();
