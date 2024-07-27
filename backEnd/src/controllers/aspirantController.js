@@ -37,8 +37,6 @@ const controller = {
                 DNI: req.body.DNI,
 				name: req.body.name,
                 lastname: req.body.lastname,
-				email: req.body.email,
-                password: req.body.password,
 				phone: req.body.phone,
 				linkedin: req.body.linkedin,
 				birthdate: req.body.birthdate,
@@ -47,7 +45,6 @@ const controller = {
 				profession: req.body.profession,
 				image: req.body.image,
 				study_level: req.body.study_level,
-				CV: req.body.CV,
 				time_availibity: req.body.time_availibity                
 			}).then(() =>
 				res.redirect('/'));
@@ -68,8 +65,6 @@ const controller = {
             DNI: req.body.DNI,
             name: req.body.name,
             lastname: req.body.lastname,
-            email: req.body.email,
-            password: req.body.password,
             phone: req.body.phone,
             linkedin: req.body.linkedin,
             birthdate: req.body.birthdate,
@@ -78,7 +73,6 @@ const controller = {
             profession: req.body.profession,
             image: req.body.image,
             study_level: req.body.study_level,
-            CV: req.body.CV,
             time_availibity: req.body.time_availibity
 		},
 		{

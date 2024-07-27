@@ -22,14 +22,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false,
         },
-        email: {
-            type: dataTypes.STRING(50),
-            allowNull: false,
-        },
-        password: {
-            type: dataTypes.STRING(200),
-            allowNull: false,
-        },
         phone: {
             type: dataTypes.STRING(20),
             allowNull: true,
@@ -64,11 +56,6 @@ module.exports = (sequelize, dataTypes) => {
         study_level: {
             type: dataTypes.STRING(20),
             allowNull: false,
-        },
-        CV: {
-            type: dataTypes.STRING(200),
-            allowNull: true,
-            defaultValue: null,
         },
         time_availibity: {
             type: dataTypes.STRING(20),
