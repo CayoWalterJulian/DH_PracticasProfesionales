@@ -24,7 +24,9 @@
     <ul>
         <% for( let i = 0; i < area.length; i++ ) { %>
         <li>
-            <a href="/"><%= area[i].name_area %></a>
+            <a href="/area/<%=area[i].id_area%>">
+                <%= area[i].name_area %>
+            </a>
         </li>
         <% } %>
 

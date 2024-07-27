@@ -1,6 +1,6 @@
 const path = require('path');
 const db = require('./../database/models');
-const { where } = require('sequelize');
+
 
 
 
@@ -11,10 +11,17 @@ const areaController = {
                 res.render('area.ejs', {area})
             })
     },
+    detail: (req, res) =>{
+        db.Area.findByPk(req.params.id_area)
+        .then(area=> {
+            res.render ("areaDetail.ejs", {area: area})
+        })
+    },
+
     create: (req ,res) =>{
         db.Area.findAll()
             .then(area=> {
-                res.render('createArea.ejs')
+                res.render('areaCreate.ejs')
             })
     },
     save: (req ,res) =>{
@@ -25,19 +32,22 @@ const areaController = {
         res.redirect ("/area")
     },
     edit: (req ,res) =>{
-        db.Area.findByPk(req.body.id)
+        db.Area.findByPk(req.params.id_area)
             .then(area=> {
-                res.render('editArea.ejs', {area : area})
+
+                res.render('areaEdit.ejs', {area : area})
             })
 
     },
-    delete: (req ,res) =>{
-        db.Area.destroy({
+    update: (req, res) =>{
+        db.Area.update({
+            name_area: req.body.name_area
+        },{
             where:{
-                id: req.params.id
+                id_area : req.params.id_area
             }
         })
         res.redirect ("/area")
-        }
+    }
     }
 module.exports = areaController;
