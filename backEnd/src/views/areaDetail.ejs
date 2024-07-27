@@ -1,3 +1,5 @@
+
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,22 +17,12 @@
     </figure>
     <h1>LISTADO DE AREA</h1>
     <br>
-    <p>
-        <a class="botonAgregar" href="/area/create">Agregar un puesto de trabajo</a>
-        <a class="botonVolver" href="/">inicio</a>
-
-    </p>
+    <section> 
+        <p>Area: <%= area.name_area %> </p>
+        <p>DNI: <%= area.dni_aspirant %> </p>
+    </section>
     <br>
-    <ul>
-        <% for( let i = 0; i < area.length; i++ ) { %>
-        <li>
-            <a href="/area/<%=area[i].id_area%>">
-                <%= area[i].name_area %>
-            </a>
-        </li>
-        <% } %>
-
-    </ul>
+    <a class="botonAgregar" href="/area/edit/<%=area.id_area%>">Editar</a>
 </body>
 
 </html>
