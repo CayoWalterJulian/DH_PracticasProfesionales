@@ -4,5 +4,7 @@ const aspirantsAPIController = require('../../controllers/api/aspirantsAPIContro
 
 //Rutas
 router.get('/', aspirantsAPIController.list);
+//GET aspirants by profession
+router.get('/:profession', aspirantsAPIController.listByProfession);
 
 module.exports = router;
