@@ -22,7 +22,7 @@ function Postulate() {
 
   return (
     <div className='purple'>
-      <form className='p-4 pt-8 max-w-screen-lg mx-auto'>
+      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action='/' method='POST' >
         <div className="space-y-6">
           <div className='relative'>
             <img src={image_form} alt="image_form" className="rounded-xl w-full h-full object-cover" />
