@@ -1,5 +1,5 @@
 import React from 'react';
-//import './App.css';
+import './App.css';
 import './main.jsx';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
@@ -10,7 +10,6 @@ import Postulate from './components/Postulate.jsx';
 import Login from './components/Login.jsx';
 import Register from './components/Register.jsx';
 import ProfessionalDetail from './components/ProfessionalDetail.jsx';
-import Form_aspirante from './components/Form_aspirante.jsx';
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/professional/:id" element={<ProfessionalDetail />} />
-          <Route path="/formulario" element={<Form_aspirante />} />
         </Routes>
       </div>
     </div>

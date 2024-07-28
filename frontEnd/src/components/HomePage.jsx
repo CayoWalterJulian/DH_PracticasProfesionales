@@ -3,6 +3,7 @@ import { FaSearch, FaUserFriends, FaBriefcase } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo-dh.png'; 
 import backgroundImage from '../assets/img/banner.jpg'; 
+import { FaHandshake } from "react-icons/fa6";
 
 const HomePage = () => {
   return (
@@ -27,19 +28,20 @@ const HomePage = () => {
         </h1>
 
         <div className="flex flex-wrap justify-center w-full px-4 md:space-y-0 md:space-x-4 lg:space-x-4 ">
-          <Link to="/search-talent" className="bg-blue-950 flex flex-col items-center justify-center p-4 w-32 h-[240px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
-            <FaSearch className="text-white mb-2 text-3xl md:text-4xl lg:text-7xl" />
-            <p className="text-white text-center text-sm md:text-base lg:text-lg">Buscar Talento</p>
+
+        <Link to="/postulate" className="bg-blue-950 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
+            <FaBriefcase className="text-white mb-2 text-2xl md:text-4xl lg:text-7xl" />
+            <p className="text-white text-center text-xs md:text-base lg:text-lg">Postularse</p>
           </Link>
 
-          <Link to="/aspirants" className="bg-blue-900 flex flex-col items-center justify-center p-4 w-32 h-[240px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
-            <FaUserFriends className="text-white mb-2 text-3xl md:text-4xl lg:text-7xl" />
-            <p className="text-white text-center text-sm md:text-base lg:text-lg">Todos los aspirantes</p>
+          <Link to="/aspirants" className="bg-blue-900 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
+            <FaUserFriends className="text-white mb-2 text-2xl md:text-4xl lg:text-7xl" />
+            <p className="text-white text-center text-xs md:text-base lg:text-lg">Todos los aspirantes</p>
           </Link>
 
-          <Link to="/formulario" className="bg-blue-950 flex flex-col items-center justify-center p-4 w-32 h-[240px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
-            <FaBriefcase className="text-white mb-2 text-3xl md:text-4xl lg:text-7xl" />
-            <p className="text-white text-center text-sm md:text-base lg:text-lg">Postularse</p>
+          <Link to="/search-talent" className="bg-blue-950 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
+            <FaHandshake className="text-white mb-2 text-2xl md:text-4xl lg:text-7xl" />
+            <p className="text-white text-center text-xs md:text-base lg:text-lg">Nosotros</p>
           </Link>
         </div>
 

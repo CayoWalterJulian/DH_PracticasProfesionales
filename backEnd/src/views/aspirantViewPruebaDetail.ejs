@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Películas</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <!-- Ver un aspirante -->
+    <div class="col-12">
+        <h2  id="aspirantName" ><%= aspirante.name %> </h2>
+        <h2  id="aspirantLastName" ><%= aspirante.lastname %> </h2>        
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+        <section>
+            <figure>
+                <img src="/img/aspirants/<%= aspirante.image %>.jpg">
+            </figure>
+            <p>Telefono: <%= aspirante.phone %> </p>
+            <p>Pais de residencia: <%= aspirante.country_residence %> </p>            
+            <p> <a href="/aspirant/edit/<%= aspirante.DNI %>">EDITAR</a></p>	
+        </section>
+    </div>
+    <!-- /todos los productos -->
+</body>
+
+</html>
