@@ -28,7 +28,7 @@ function Register({ setIsAuthenticated, isAuthenticated }) {
         <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-              Usuario
+              Nombre de Usuario
             </label>
             <input
               type="text"
