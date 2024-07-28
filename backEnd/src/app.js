@@ -17,6 +17,7 @@ const areaRoutes = require('./routes/areaRoutes');
 //Aquí llamo a la ruta de las api de movies
  const apiAspirantsRouter = require('./routes/api/apirants');
  const apiProfessionsRouter = require('./routes/api/professions');
+ const apiAreasRouter = require('./routes/api/areas');
  const apiSearchRouter = require('./routes/api/search');
 // //Aquí llamo a la ruta de las api de actors
 // const apiGenresRouter = require('./routes/api/genres')
@@ -47,8 +48,9 @@ app.use('/area', areaRoutes);
 // app.use(moviesRoutes);
 // app.use(genresRoutes);
 // //Aquí creo la colección de mis recursos de movies (APIs)
-  app.use('/api/aspirants',apiAspirantsRouter);
- app.use('/api/professions',apiProfessionsRouter);
+app.use('/api/aspirants',apiAspirantsRouter);
+app.use('/api/professions',apiProfessionsRouter);
+app.use('/api/areas',apiAreasRouter);
 app.use('/api/search',apiSearchRouter);
 
 

@@ -3,7 +3,7 @@ import { GiGraduateCap } from "react-icons/gi";
 import { FaBriefcase } from "react-icons/fa";
 import { MdLanguage } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { FaLightbulb } from "react-icons/fa6";
 
 const professionalExample = {
@@ -109,8 +109,8 @@ const ProfessionalDetail = ({ professional = professionalExample }) => {
                 </div>
                 {/*Nombre y apellido, profesion */}
                 <div className=" p-1 mt-12 text-center md:mt-16 lg:mt-20 ">
-                    <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl">{professionalExample.firstName} {professionalExample.lastName}</h2>
-                    <p className="text-gray-600 text-base md:text-lg lg:text-xl">{professionalExample.profession}</p>
+                    <h2 className="font-roboto font-bold text-2xl md:text-3xl lg:text-4xl">{professionalExample.firstName} {professionalExample.lastName}</h2>
+                    <p className="font-roboto text-gray-600 text-base md:text-lg lg:text-xl">{professionalExample.profession}</p>
                 </div>
 
 
@@ -124,7 +124,7 @@ const ProfessionalDetail = ({ professional = professionalExample }) => {
                         <div className='border  rounded-md  bg-gray-300 mt-2 mb-7 p-4'>
                             <div className='flex items-center mb-4'>
                                 <FaBriefcase className='text-[20px]' />
-                                <h2 className='ml-2 font-bold  text-gray-800'>EXPERIENCIA LABORAL</h2>
+                                <h2 className='font-roboto ml-2 font-bold  text-gray-800'>EXPERIENCIA LABORAL</h2>
                             </div>
 
                             <ul className='space-y-4'>
@@ -143,7 +143,7 @@ const ProfessionalDetail = ({ professional = professionalExample }) => {
                         <div className='border rounded-md bg-gray-300 mt-2 mb-2 p-4'>
                             <div className='flex items-center mb-4'>
                                 <GiGraduateCap className='text-[30px]' />
-                                <h2 className='ml-2 font-bold text-gray-800'>EDUCACIÓN</h2>
+                                <h2 className='font-roboto ml-2 font-bold text-gray-800'>EDUCACIÓN</h2>
                             </div>
 
                             <ul className='space-y-4'>
@@ -166,7 +166,7 @@ const ProfessionalDetail = ({ professional = professionalExample }) => {
                         <div className='border rounded-md  bg-gray-300 mt-2 mb-7 p-4'>
                             <div className='flex items-center mb-4'>
                                 <FaLightbulb className='text-[20px]' />
-                                <h2 className='ml-2 font-bold  text-gray-800'>ÁREAS DE INTERÉS</h2>
+                                <h2 className='font-roboto ml-2 font-bold  text-gray-800'>ÁREAS DE INTERÉS</h2>
                             </div>
                             <ul className='space-y-4 m-4'>
                                 <li className='border border-gray-300 p-3 rounded-md shadow-sm bg-white'>
@@ -184,7 +184,7 @@ const ProfessionalDetail = ({ professional = professionalExample }) => {
                         <div className='border rounded-md  bg-gray-300 mt-2 mb-7 p-4'>
                             <div className='flex items-center mb-4'>
                                 <MdLanguage className='text-[24px]' />
-                                <h2 className='ml-2 font-bold  text-gray-800'>IDIOMAS</h2>
+                                <h2 className='font-roboto ml-2 font-bold  text-gray-800'>IDIOMAS</h2>
                             </div>
                             <ul className='space-y-4'>
                                 {professionalExample.languages.map((lan) => (
@@ -200,21 +200,38 @@ const ProfessionalDetail = ({ professional = professionalExample }) => {
                         <div className='border rounded-md  bg-gray-300 mt-2 mb-7 p-4'>
                             <div className='flex items-center mb-4'>
                                 <IoIosContact className='text-[28px]' />
-                                <h2 className='ml-2 font-bold  text-gray-800'>CONTACTO</h2>
+                                <h2 className='font-roboto ml-2 font-bold  text-gray-800'>CONTACTO</h2>
                             </div>
 
                             <div className='border border-gray-300 p-3 rounded-md shadow-sm bg-white'>
-                                <p className='text-gray-800 mb-1'><strong>Email:</strong> {professionalExample.email}</p>
-                                <p className='text-gray-800 mb-1'><strong>Teléfono:</strong> {professionalExample.phone}</p>
+                                <p className='text-gray-800 mb-1 flex items-center'>
+                                    <a
+                                        href={`mailto:${professionalExample.email}`}
+                                        className="text-blue-600 hover:underline flex items-center ml-2"
+                                    >
+                                        <FaEnvelope className="mr-2" />
+                                        {professionalExample.email}
+                                    </a>
+                                </p>
+                                <p className='text-gray-800 mb-1 flex items-center'>
+                                    <a
+                                        href={`https://wa.me/${professionalExample.phone}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-600 hover:underline flex items-center ml-2"
+                                    >
+                                        <FaPhone className="mr-2" />
+                                        {professionalExample.phone}
+                                    </a>
+                                </p>
                                 <a
                                     href={professionalExample.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline flex items-center">
-
+                                    className="text-blue-600 hover:underline flex items-center ml-2"
+                                >
                                     <FaLinkedin className="mr-2" />
                                     {professionalExample.linkedin}
-
                                 </a>
                             </div>
                         </div>

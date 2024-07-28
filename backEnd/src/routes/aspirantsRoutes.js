@@ -21,8 +21,5 @@ router.get('/edit/:id', aspirantController.edit);
 router.put('/:id', aspirantController.update); 
 
 
-// /*** DELETE ONE PRODUCT ***/ 
-router.delete('/:id', aspirantController.destroy); 
-
 
 module.exports = router;

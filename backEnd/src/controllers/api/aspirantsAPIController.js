@@ -1,8 +1,8 @@
 const db = require('../../database/models');
+const Aspirant = require('../../database/models/Aspirant');
 const sequelize = db.sequelize;
 
 const dataController = {
-    
     list: async (req, res) => {
         try {
             const aspirant = await db.Aspirant.findAll();
@@ -32,7 +32,43 @@ const dataController = {
             console.error("Error al obtener la lista de productos", error);
             res.status(500).json({error: "No se pudo obtener la lista de productos"});
         }
-    }   
+    } ,
+    /*
+    'list': (req,res) => {
+        db.Aspirant
+            .findAll()
+            .then(Aspirants => {
+                return res.json({
+                    total:Aspirants.length,
+                    data: Aspirants,
+                    status:200
+                })
+            })
+    },*/
+    'listByProfession': (req, res) => {
+        console.log(req.params.profession);
+        db.Aspirant.findAll({
+            where: {
+                profession: req.params.profession
+            },
+            order: [
+
+                ['profession', 'ASC']
+            ]
+        })
+        .then(aspirants => {
+            let respuesta = {
+                meta: {
+                    status : 200,
+                    total: aspirants.length,
+                    url: 'api/aspirants/:profession'
+                },
+                data:aspirants
+            }
+                res.json(respuesta);
+        })
+        .catch(error => console.log(error))
+    }
 }
 
 module.exports = dataController;
