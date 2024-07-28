@@ -78,7 +78,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_area",
             otherKey: "DNI",
             timestamps: false
-        }) 
+        })
         Aspirant.belongsToMany( models.Lenguage, {           
             as: 'lenguages',
             through: 'aspirant_lenguage',
@@ -93,9 +93,7 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: "id_experience",
         timestamps: false
     });
-    }
-    
-
-
-    return Aspirant;
+  
+    }   
+    return Aspirant
 };

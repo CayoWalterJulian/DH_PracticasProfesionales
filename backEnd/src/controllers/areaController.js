@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('./../database/models');
+const { Association } = require('sequelize');
 
 
 
@@ -12,9 +13,11 @@ const areaController = {
             })
     },
     detail: (req, res) =>{
-        db.Area.findByPk(req.params.id_area)
-        .then(area=> {
-            res.render ("areaDetail.ejs", {area: area})
+        db.Area.findByPk(req.params.id_area/*, {
+            include: [{Association: "aspirants"}]
+        }*/)
+        .then(function(area) {
+            res.render ("areaDetail.ejs", {area:area})
         })
     },
 
@@ -23,13 +26,14 @@ const areaController = {
             .then(area=> {
                 res.render('areaCreate.ejs')
             })
+            
     },
     save: (req ,res) =>{
         db.Area.create({
-            name_area: req.body.area,
+            name_area: req.body.name_area,
             dni_aspirant: req.body.dni
-        })
-        res.redirect ("/area")
+        }).then(() =>
+            res.redirect('/area'));
     },
     edit: (req ,res) =>{
         db.Area.findByPk(req.params.id_area)

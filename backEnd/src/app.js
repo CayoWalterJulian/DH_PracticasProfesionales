@@ -44,7 +44,6 @@ app.use('/aspirant', aspirantRoutes);
 //app.use('/experienceRoutes', experienceRoutes);
 app.use('/area', areaRoutes);
 
-
 // app.use(moviesRoutes);
 // app.use(genresRoutes);
 // //Aquí creo la colección de mis recursos de movies (APIs)
