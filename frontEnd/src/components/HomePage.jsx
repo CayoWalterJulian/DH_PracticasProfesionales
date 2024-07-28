@@ -17,7 +17,7 @@ const HomePage = () => {
       <div className="relative flex flex-col items-center pt-10">
         <img src={logo} alt="Logo" className="w-40 h-auto mb-3 md:w-52 lg:hidden" />
 
-        <h1 className="relative z-10 text-white text-center px-4 mb-8 text-2xl md:text-3xl lg:text-4xl lg:text-justify">
+        <h1 className="relative z-10 text-white text-center px-4 mb-8 text-2xl font-roboto md:text-3xl lg:text-4xl lg:text-justify">
             <span className="lg:hidden">
                 Descubre el talento que tu empresa necesita en áreas administrativas, profesionales y técnicas.
             </span>
@@ -31,30 +31,33 @@ const HomePage = () => {
 
         <Link to="/postulate" className="bg-blue-950 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
             <FaBriefcase className="text-white mb-2 text-2xl md:text-4xl lg:text-7xl" />
-            <p className="text-white text-center text-xs md:text-base lg:text-lg">Postularse</p>
+            <p className="text-white font-roboto text-center text-xs md:text-base lg:text-lg">Postularse</p>
           </Link>
 
           <Link to="/aspirants" className="bg-blue-900 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
             <FaUserFriends className="text-white mb-2 text-2xl md:text-4xl lg:text-7xl" />
-            <p className="text-white text-center text-xs md:text-base lg:text-lg">Todos los aspirantes</p>
+            <p className="text-white font-roboto text-center text-xs md:text-base lg:text-lg">Candidatos</p>
           </Link>
 
-          <Link to="/search-talent" className="bg-blue-950 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
+          {/*<Link to="/search-talent" className="bg-blue-950 flex flex-col items-center justify-center p-2 w-[300px] h-[80px] sm:w-48 sm:h-[280px] md:w-48 md:h-[280px] lg:w-72 lg:h-[400px] lg:bg-black lg:bg-opacity-50">
             <FaHandshake className="text-white mb-2 text-2xl md:text-4xl lg:text-7xl" />
             <p className="text-white text-center text-xs md:text-base lg:text-lg">Nosotros</p>
-          </Link>
+          </Link>*/}
         </div>
 
-        <div className="relative z-10 mt-8 flex justify-center space-x-8">
+        {/*<div className="relative z-10 mt-8 flex justify-center space-x-8">
           <Link to="/login" className="text-white underline uppercase">
             Iniciar Sesión
           </Link>
           <Link to="/register" className="text-white underline uppercase">
             Registrarte
           </Link>
-        </div>
+        </div>*/}
 
       </div>
+
+      
+
 
     </div>
   );
