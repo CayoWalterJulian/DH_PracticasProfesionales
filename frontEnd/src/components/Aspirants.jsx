@@ -23,8 +23,10 @@ const Aspirants = () => {
   }, []);
 
   return (
-    <div className="bg-[#d8cfc4] p-4 min-h-screen">
-      <h1 className="text-left text-2xl font-bold mb-4 flex justify-center text-gray-800 md:text-3xl lg:text-4xl">Todos los aspirantes</h1>
+    <div className="purple p-4 min-h-screen">
+      <h1 className="text-left text-2xl font-bold mb-4 flex justify-center text-gray-800 md:text-3xl lg:text-4xl">POSTULANTES</h1>
+
+      <div className='border-t border-t-gray-400 border-opacity-25 text-black py-4'></div>
 
       <div className="flex flex-wrap justify-center gap-4">
         {aspirantsData.map((aspirant) => (

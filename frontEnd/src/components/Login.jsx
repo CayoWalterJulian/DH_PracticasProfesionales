@@ -15,7 +15,7 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#d8cfc4]">
+    <div className="flex items-center justify-center min-h-screen purple">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md mt-20">
         <h2 className="text-2xl font-bold mb-6 text-center">Iniciar sesión</h2>
         <form onSubmit={handleLogin}>
