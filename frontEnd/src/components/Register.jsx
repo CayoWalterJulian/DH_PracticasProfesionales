@@ -1,34 +1,112 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+
+function Register({ setIsAuthenticated, isAuthenticated }) {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    if (password !== confirmPassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+    // Aquí puedes agregar la lógica para manejar el registro
+    setIsAuthenticated(true); // Simulación de registro exitoso
+  };
+
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-[#d8cfc4]">
+      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-6 text-center">Registro</h2>
+        <form onSubmit={handleRegister}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              Nombre de Usuario <span className='text-red-400'>*</span>
+            </label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Correo Electrónico <span className='text-red-400'>*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Contraseña <span className='text-red-400'>*</span>
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
+              Confirmar Contraseña <span className='text-red-400'>*</span>
+            </label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+              required
+            />
+          </div>
+          <div className="mt-6 flex items-center justify-end gap-x-6">
+            <Link type="button" className="text-sm font-semibold leading-6 text-gray-900" to='/'>
+              Cancelar
+            </Link>
+            <button
+              type="submit"
+              className="rounded-md blue px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Register;
+
+{/*import React from 'react';
 import image_form from "../assets/images/image-form.png";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { FaWpforms } from "react-icons/fa";
 import logo_arh from "../assets/images/logo-arh.png";
-import { Link } from 'react-router-dom';
-// =======
-// import React, { useState } from 'react';
-// import { Link, Navigate } from 'react-router-dom';
-
-// function Register({ setIsAuthenticated, isAuthenticated }) {
-//   const [username, setUsername] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [confirmPassword, setConfirmPassword] = useState('');
-
-//   const handleRegister = (event) => {
-//     event.preventDefault();
-//     if (password !== confirmPassword) {
-//       alert('Las contraseñas no coinciden');
-//       return;
-//     }
-//     // Aquí puedes agregar la lógica para manejar el registro
-//     setIsAuthenticated(true); // Simulación de registro exitoso
-//   };
-
-//   if (isAuthenticated) {
-//     return <Navigate to="/" />;
-//   }
-// >>>>>>> master
-function Register() {
+import { Link } from 'react-router-dom';function Register() {
   return (
     <div className='purple'>
       <form className='p-4 pt-8 max-w-screen-lg mx-auto'>
@@ -118,79 +196,6 @@ function Register() {
       </form>
     </div>
   )
-// =======
-//     <div className="flex items-center justify-center min-h-screen bg-gray-100" style={{ backgroundImage: 'url(/path/to/your/background.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-//       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-//         <h2 className="text-2xl font-bold mb-6 text-center">Regístrate</h2>
-//         <form onSubmit={handleRegister}>
-//           <div className="mb-4">
-//             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-//               Nombre de Usuario
-//             </label>
-//             <input
-//               type="text"
-//               id="username"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//               className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
-//               required
-//             />
-//           </div>
-//           <div className="mb-4">
-//             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-//               Correo Electrónico
-//             </label>
-//             <input
-//               type="email"
-//               id="email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
-//               required
-//             />
-//           </div>
-//           <div className="mb-4">
-//             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-//               Contraseña
-//             </label>
-//             <input
-//               type="password"
-//               id="password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
-//               required
-//             />
-//           </div>
-//           <div className="mb-6">
-//             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
-//               Confirmar Contraseña
-//             </label>
-//             <input
-//               type="password"
-//               id="confirmPassword"
-//               value={confirmPassword}
-//               onChange={(e) => setConfirmPassword(e.target.value)}
-//               className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
-//               required
-//             />
-//           </div>
-//           <div className="flex items-center justify-between">
-//             <button
-//               type="submit"
-//               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-//             >
-//               Regístrate
-//             </button>
-//           </div>
-//         </form>
-//         <div className="mt-4 text-center">
-//           <p className="text-gray-700">¿Ya tienes una cuenta? <Link to="/login" className="text-blue-500 hover:text-blue-800">Inicia sesión</Link></p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// >>>>>>> master
 }
 
-export default Register;
+export default Register;*/}
