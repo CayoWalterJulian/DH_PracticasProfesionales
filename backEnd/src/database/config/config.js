@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": '123asd',
-    "database": "dhpp",
+    "password": '',
+    "database": "recruitingrh_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
