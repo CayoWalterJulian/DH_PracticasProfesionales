@@ -4,104 +4,98 @@ const sequelize = db.sequelize;
 
 const dataController = {
 
+    // List all aspirants
     list: async (req, res) => {
         try {
-            const aspirant = await db.Aspirant.findAll();
-            const countByCategory = {};          
+            const aspirants = await db.Aspirant.findAll();
             const response = {
-                count: aspirant.length,
-                aspirant: aspirant.map(aspirant => ({
+                count: aspirants.length,
+                aspirant: aspirants.map(aspirant => ({
                     DNI: aspirant.DNI,
                     name: aspirant.name,
                     lastname: aspirant.lastname,
                     email: aspirant.email,
                     phone: aspirant.phone,
                     linkedin: `https://www.linkedin.com/${aspirant.linkedin}`,
-                    birthdate: aspirant.birthday,
+                    birthdate: aspirant.birthdate,
                     gender: aspirant.gender,
                     country: aspirant.country_residence,
-                    profesion: aspirant.profession,
-                    image: `${req.protocol}://${req.get('host')}/img/apirants/${aspirant.image}`,
-                    study:aspirant.study_level,
+                    profession: aspirant.profession,
+                    image: `${req.protocol}://${req.get('host')}/img/aspirants/${aspirant.image}`,
+                    study: aspirant.study_level,
                     time: aspirant.time_availibity
                 })),
                 status: 200
             };
-            res.json(response)
+            res.json(response);
         } catch (error) {
-            console.error("Error al obtener la lista de aspirantes", error);
-            res.status(500).json({error: "No se pudo obtener la lista de aspirantes"});
+
+            console.error("Error fetching aspirants", error);
+            res.status(500).json({ error: "Internal server error" });
         }
-    } ,
-    /*
-    'list': (req,res) => {
-        db.Aspirant
-            .findAll()
-            .then(Aspirants => {
-                return res.json({
-                    total:Aspirants.length,
-                    data: Aspirants,
-                    status:200
-                })
-            })
     },
-    'listByProfession': (req, res) => {
+    // List aspirants by profession (incorrect usage in your case)
+    listByProfession: (req, res) => {
         console.log(req.params.profession);
         db.Aspirant.findAll({
             where: {
                 profession: req.params.profession
             },
-            order: [
-                ['profession', 'ASC']
-            ]
+            order: [['profession', 'ASC']]
         })
         .then(aspirants => {
-            let respuesta = {
+            let response = {
                 meta: {
-                    status : 200,
+                    status: 200,
                     total: aspirants.length,
                     url: 'api/aspirants/:profession'
                 },
-                data:aspirants
-            }
-                res.json(respuesta);
-        })
-        .catch(error => console.log(error))
-    }*/
-    listByProfession: async (req, res) => {
-        try{
-            const aspirants = await db.Aspirant.findAll({
-                where: {
-                    profession: req.params.profession
-                },
-                order: [
-                    ['profession', 'ASC']
-                ]
-            })
-            const response = {
-                count : aspirants.length,
-                aspirants : aspirants.map(aspirants=> ({
-                    DNI: aspirants.DNI,
-                    name: aspirants.name,
-                    lastname: aspirants.lastname,
-                    email: aspirants.email,
-                    phone: aspirants.phone,
-                    linkedin: `https://www.linkedin.com/${aspirants.linkedin}`,
-                    birthdate: aspirants.birthday,
-                    gender: aspirants.gender,
-                    country: aspirants.country_residence,
-                    profesion: aspirants.profession,
-                    image: `${req.protocol}://${req.get('host')}/img/apirants/${aspirants.image}`,
-                    study:aspirants.study_level,
-                    time: aspirants.time_availibity
-                })),
-                status:200
+                data: aspirants
             };
             res.json(response);
+        })
+        .catch(error => {
+            console.error("Error fetching aspirants by profession", error);
+            res.status(500).json({ error: "Internal server error" });
+        });
+    },
+    // Get aspirant by DNI
+    getByDNI: (req, res) => {
+        const { DNI } = req.params;
+        db.Aspirant.findOne({
+            where: { DNI: DNI }
+        })
+        .then(aspirant => {
+            if (aspirant) {
+                res.json({
+                    aspirant: {
+                        DNI: aspirant.DNI,
+                        name: aspirant.name,
+                        lastname: aspirant.lastname,
+                        email: aspirant.email,
+                        phone: aspirant.phone,
+                        linkedin: `https://www.linkedin.com/${aspirant.linkedin}`,
+                        birthdate: aspirant.birthdate,
+                        gender: aspirant.gender,
+                        country: aspirant.country_residence,
+                        profession: aspirant.profession,
+                        image: `${req.protocol}://${req.get('host')}/img/aspirants/${aspirant.image}`,
+                        study: aspirant.study_level,
+                        cv: aspirant.CV,
+                        time: aspirant.time_availibity
+                    }
+                });
+            } else {
+                res.status(404).json({ error: 'Aspirant not found' });
             }
-            catch(error) {console.log(error)
-            }
-        }
+        })
+        .catch(error => {
+            console.error("Error fetching aspirant by DNI", error);
+            res.status(500).json({ error: "Internal server error" });
+        });
+    }
+
 }
+
 
 module.exports = dataController;

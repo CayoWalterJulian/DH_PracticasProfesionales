@@ -31,7 +31,7 @@ router.post('/store/', fileUpload.single('image'), aspirantController.store);
 
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/:id', aspirantController.detail); 
+router.get('/:DNI', aspirantController.detail); 
 
 // /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', aspirantController.edit); 
