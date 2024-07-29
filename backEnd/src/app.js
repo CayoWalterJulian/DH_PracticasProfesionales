@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const lenguageRoutes = require('./routes/lenguageRoutes');
 const aspirantRoutes = require('./routes/aspirantsRoutes');
 const areaRoutes = require('./routes/areaRoutes');
+const  userRoutes = require("./routes/userRoutes")
 //const experienceRoutes = require('./routes/experienceRoutes');
 //const moviesRoutes = require('./routes/moviesRoutes');
 //const genresRoutes = require('./routes/genresRoutes');
@@ -19,6 +20,7 @@ const areaRoutes = require('./routes/areaRoutes');
  const apiProfessionsRouter = require('./routes/api/professions');
  const apiAreasRouter = require('./routes/api/areas');
  const apiSearchRouter = require('./routes/api/search');
+ const apiUserRouter = require('./routes/api/user');
 // //Aquí llamo a la ruta de las api de actors
 // const apiGenresRouter = require('./routes/api/genres')
 // //Aquí llamo a la ruta de las api de actors
@@ -44,7 +46,7 @@ app.use('/lenguage', lenguageRoutes);
 app.use('/aspirant', aspirantRoutes);
 //app.use('/experienceRoutes', experienceRoutes);
 app.use('/area', areaRoutes);
-
+app.use("/user", userRoutes)
 
 // app.use(moviesRoutes);
 // app.use(genresRoutes);
@@ -53,7 +55,7 @@ app.use('/api/aspirants',apiAspirantsRouter);
 app.use('/api/professions',apiProfessionsRouter);
 app.use('/api/areas',apiAreasRouter);
 app.use('/api/search',apiSearchRouter);
-
+app.use('/api/user',apiUserRouter);
 
 //Activando el servidor desde express
 app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));
