@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const lenguageRoutes = require('./routes/lenguageRoutes');
 const aspirantRoutes = require('./routes/aspirantsRoutes');
 const areaRoutes = require('./routes/areaRoutes');
+const  userRoutes = require("./routes/userRoutes")
 //const experienceRoutes = require('./routes/experienceRoutes');
 //const moviesRoutes = require('./routes/moviesRoutes');
 //const genresRoutes = require('./routes/genresRoutes');
@@ -44,6 +45,7 @@ app.use('/lenguage', lenguageRoutes);
 app.use('/aspirant', aspirantRoutes);
 //app.use('/experienceRoutes', experienceRoutes);
 app.use('/area', areaRoutes);
+app.use("/user", userRoutes)
 
 // app.use(moviesRoutes);
 // app.use(genresRoutes);
