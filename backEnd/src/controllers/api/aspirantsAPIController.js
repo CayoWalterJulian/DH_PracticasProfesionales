@@ -11,7 +11,7 @@ const dataController = {
             const response = {
                 count: aspirant.length,
                 aspirant: aspirant.map(aspirant => ({
-                    DNItt: aspirant.DNI,
+                    DNI: aspirant.DNI,
                     name: aspirant.name,
                     lastname: aspirant.lastname,
                     email: aspirant.email,
@@ -21,9 +21,8 @@ const dataController = {
                     gender: aspirant.gender,
                     country: aspirant.country_residence,
                     profesion: aspirant.profession,
-                    image: `${req.protocol}://${req.get('host')}/img/${aspirant.image}`,
+                    image: `${req.protocol}://${req.get('host')}/img/apirants/${aspirant.image}`,
                     study:aspirant.study_level,
-                    cv: aspirant.CV,
                     time: aspirant.time_availibity
                 })),
                 status: 200
@@ -45,7 +44,7 @@ const dataController = {
                     status:200
                 })
             })
-    },*/
+    },
     'listByProfession': (req, res) => {
         console.log(req.params.profession);
         db.Aspirant.findAll({
@@ -68,7 +67,41 @@ const dataController = {
                 res.json(respuesta);
         })
         .catch(error => console.log(error))
-    }
+    }*/
+    listByProfession: async (req, res) => {
+        try{
+            const aspirants = await db.Aspirant.findAll({
+                where: {
+                    profession: req.params.profession
+                },
+                order: [
+                    ['profession', 'ASC']
+                ]
+            })
+            const response = {
+                count : aspirants.length,
+                aspirants : aspirants.map(aspirants=> ({
+                    DNI: aspirants.DNI,
+                    name: aspirants.name,
+                    lastname: aspirants.lastname,
+                    email: aspirants.email,
+                    phone: aspirants.phone,
+                    linkedin: `https://www.linkedin.com/${aspirants.linkedin}`,
+                    birthdate: aspirants.birthday,
+                    gender: aspirants.gender,
+                    country: aspirants.country_residence,
+                    profesion: aspirants.profession,
+                    image: `${req.protocol}://${req.get('host')}/img/apirants/${aspirants.image}`,
+                    study:aspirants.study_level,
+                    time: aspirants.time_availibity
+                })),
+                status:200
+            };
+            res.json(response);
+            }
+            catch(error) {console.log(error)
+            }
+        }
 }
 
 module.exports = dataController;
