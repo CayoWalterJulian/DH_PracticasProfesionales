@@ -47,7 +47,7 @@ function App() {
           <Route path="/postulate" element={<Postulate />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/professional/:id" element={<ProfessionalDetail />} />
+          <Route path="/professional/:DNI" element={<ProfessionalDetail />} />
         </Routes>
       </div>
       <Footer />
