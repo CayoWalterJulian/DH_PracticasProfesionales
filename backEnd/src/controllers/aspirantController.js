@@ -1,4 +1,4 @@
-const fs = require('fs'); 
+const fs = require('fs');
 const path = require('path');
 //const crypto = require('crypto');
 //const { validationResult } = require('express-validator');
@@ -13,56 +13,66 @@ const Op = db.sequelize.Op;
 const controller = {
     //Show all aspirants
     index: (req, res) => {
-		db.Aspirant.findAll()
-			.then(function(aspirants) {
-				res.render('aspirantViewPrueba',{aspirantes: aspirants}); 
-			})
-	},
-	// Detail - Detail from one product
-	detail: (req, res) => {
-		db.Aspirant.findByPk(req.params.id)
-			.then(function(aspirant) {
-				res.render('aspirantViewPruebaDetail', {aspirante: aspirant});
-			})
-	},
-	// Create - Form to create
-	create: (req, res) => {
-		console.log("estoy en el create");
-		res.render('aspirantCreatePrueba');
-	},
-	// Create -  Method to store
-	store: (req, res) => {
-		console.log(req.body);
-		db.Aspirant.create ({
-                DNI: req.body.DNI,
-				name: req.body.name,
-                lastname: req.body.lastname,
-                email: req.body.email,
-				phone: req.body.phone,
-				linkedin: req.body.linkedin,
-				birthdate: req.body.birthdate,
-				gender: req.body.gender,
-				country_residence: req.body.country_residence,
-				profession: req.body.profession,
-				image: req.body.image,
-				study_level: req.body.study_level,
-				time_availibity: req.body.time_availibity                
-			}).then(() =>
-				res.redirect('/'));
-	},
-	// Update - Form to edit
-	edit: (req, res) => {
-		console.log("estoy en el edit");
-		db.Aspirant.findByPk(req.params.id)
-		.then(function(aspirant) {
-			res.render('aspirantViewPruebaEdit', {aspirante: aspirant});
-		})
-	},
-	// Update - Method to update
-	update: (req, res) => {
-		console.log('estoy en el edit');
+        db.Aspirant.findAll()
+            .then(function (aspirants) {
+                res.render('aspirantViewPrueba', { aspirantes: aspirants });
+            })
+    },
+    // Detail - Detail from one product
+    detail: (req, res) => {
+        const { DNI } = req.params; // Asegúrate de que el parámetro se llama DNI
+
+        db.Aspirant.findByPk(DNI)
+            .then(aspirant => {
+                if (aspirant) {
+                    res.json({ aspirant }); // Devuelve el aspirante en formato JSON
+                } else {
+                    res.status(404).json({ error: 'Aspirant not found' }); // Manejo del caso cuando no se encuentra el aspirante
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching aspirant details:', error);
+                res.status(500).json({ error: 'Internal server error' }); // Manejo de errores del servidor
+            });
+    },
+    // Create - Form to create
+    create: (req, res) => {
+        console.log("estoy en el create");
+        res.render('aspirantCreatePrueba');
+    },
+    // Create -  Method to store
+    store: (req, res) => {
         console.log(req.body);
-		db.Aspirant.update({
+        db.Aspirant.create({
+            DNI: req.body.DNI,
+            name: req.body.name,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            phone: req.body.phone,
+            linkedin: req.body.linkedin,
+            birthdate: req.body.birthdate,
+            gender: req.body.gender,
+            country_residence: req.body.country_residence,
+            profession: req.body.profession,
+            image: req.body.image,
+            study_level: req.body.study_level,
+            time_availibity: req.body.time_availibity
+        }).then(() =>
+            res.redirect('/'));
+    },
+    // Update - Form to edit
+    edit: (req, res) => {
+        console.log("estoy en el edit");
+        db.Aspirant.findByPk(req.params.id)
+            .then(function (aspirant) {
+                res.render('aspirantViewPruebaEdit', { aspirante: aspirant });
+            })
+    },
+    // Update - Method to update
+    update: (req, res) => {
+        console.log('estoy en el edit');
+        console.log(req.body);
+        db.Aspirant.update({
             DNI: req.body.DNI,
             name: req.body.name,
             lastname: req.body.lastname,
@@ -76,23 +86,23 @@ const controller = {
             image: req.body.image,
             study_level: req.body.study_level,
             time_availibity: req.body.time_availibity
-		},
-		{
-			where:{
-				DNI: req.params.id
-			}
-		}).then(() => 
-			res.redirect('/'));
-	},
-	// Delete - Delete one product from DB
-	destroy : (req, res) => {
-		db.Aspirant.destroy({
-			where: {
-				DNI : req.params.DNI
-			}
-		}).then( () =>
-			res.redirect('/'));
-	}
+        },
+            {
+                where: {
+                    DNI: req.params.id
+                }
+            }).then(() =>
+                res.redirect('/'));
+    },
+    // Delete - Delete one product from DB
+    destroy: (req, res) => {
+        db.Aspirant.destroy({
+            where: {
+                DNI: req.params.DNI
+            }
+        }).then(() =>
+            res.redirect('/'));
+    }
     // Formulario para iniciar sesión
     /*
     login: (req, res) => {
