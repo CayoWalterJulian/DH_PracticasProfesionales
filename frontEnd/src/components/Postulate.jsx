@@ -22,7 +22,7 @@ function Postulate() {
 
   return (
     <div className='purple'>
-      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action='/' method='POST' >
+      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action='' method='POST' >
         <div className="space-y-6">
           <div className='relative'>
             <img src={image_form} alt="image_form" className="rounded-xl w-full h-full object-cover" />
@@ -46,8 +46,8 @@ function Postulate() {
                 </label>
                 <div className="mt-2">
                   <input
-                    id="first-name"
-                    name="first-name"
+                    id="name"
+                    name="name"
                     type="text"
                     autoComplete="given-name"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
@@ -56,74 +56,74 @@ function Postulate() {
               </div>
 
               <div className="sm:col-span-3">
-                <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="lastname" className="block text-sm font-medium leading-6 text-gray-900">
                   Apellido <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2">
                   <input
-                    id="last-name"
-                    name="last-name"
+                    id="lastname"
+                    name="lastname"
                     type="text"
-                    autoComplete="last-name"
+                    autoComplete="lastname"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
               </div>
 
               <div className="sm:col-span-3">
-                <label htmlFor="dni" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="DNI" className="block text-sm font-medium leading-6 text-gray-900">
                   DNI <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2">
                   <input
-                    id="dni"
-                    name="dni"
+                    id="DNI"
+                    name="DNI"
                     type="text"
-                    autoComplete="dni"
+                    autoComplete="DNI"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
               </div>
 
               <div className="sm:col-span-3">
-                <label htmlFor="phone-number" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="phone" className="block text-sm font-medium leading-6 text-gray-900">
                   Telefono <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2">
                   <input
-                    id="phone-number"
-                    name="phone-number"
+                    id="phone"
+                    name="phone"
                     type="text"
-                    autoComplete="phone-number"
+                    autoComplete="phone"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
               </div>
 
               <div className="sm:col-span-3">
-                <label htmlFor="url-linkedin" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="linkedin" className="block text-sm font-medium leading-6 text-gray-900">
                   Perfil Linkedin <span className="text-red-400">*</span>
                 </label>
                 <div className="mt-2">
                   <input
-                    id="url-linkedin"
-                    name="url-linkedin"
+                    id="linkedin"
+                    name="linkedin"
                     type="text"
-                    autoComplete="url-linkedin"
+                    autoComplete="linkedin"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
               </div>
 
               <div className="sm:col-span-3">
-                <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="country_residence" className="block text-sm font-medium leading-6 text-gray-900">
                   Pais de recidencia <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2 relative">
                   <select
-                    id="country"
-                    name="country"
-                    autoComplete="country"
+                    id="country_residence"
+                    name="country_residence"
+                    autoComplete="country_residence"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
                     <option selected disabled>Seleccionar...</option>
@@ -247,7 +247,7 @@ function Postulate() {
                 </div>
               </div>
 
-              <div className="sm:col-span-3">
+              {/* <div className="sm:col-span-3">
                 <label htmlFor="preference-area" className="block text-sm font-medium leading-6 text-gray-900">
                   Area de preferencia <span className='text-red-400'>*</span>
                 </label>
@@ -334,7 +334,7 @@ function Postulate() {
                     <RiArrowDownSLine className='h-5 w-5 text-gray-400' />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="sm:col-span-3">
                 <label htmlFor="study-level" className="block text-sm font-medium leading-6 text-gray-900">
@@ -364,6 +364,7 @@ function Postulate() {
                 </div>
               </div>
 
+
               <div className="sm:col-span-3">
                 <label htmlFor="time-availability" className="block text-sm font-medium leading-6 text-gray-900">
                   Tiempo disponible <span className='text-red-400'>*</span>
@@ -386,8 +387,23 @@ function Postulate() {
                 </div>
               </div>
 
-              <div className="col-span-full flex items-center justify-center w-full">
-                <label htmlFor="picture-profile" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed ounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200">
+              <div className="sm:col-span-3">
+                <label htmlFor="image" className="block text-sm font-medium leading-6 text-gray-900">
+                  Imagen <span className='text-red-400'>*</span>
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="image"
+                    name="image"
+                    type="text"
+                    autoComplete="image"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                  />
+                </div>
+              </div>
+
+              {/* <div className="col-span-full flex items-center justify-center w-full">
+                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed ounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     {imageSrc ? (
                       <img src={imageSrc} alt="Uploaded" className="h-24 w-24 object-cover rounded-full mb-6" />
@@ -401,15 +417,15 @@ function Postulate() {
                     <p className="text-xs text-gray-500 dark:text-gray-500">PNG, JPG, JPEG hasta 10MB</p>
                   </div>
                   <input
-                    id="picture-profile"
-                    name="picture-profile"
+                    id="image"
+                    name="image"
                     type="file"
                     accept=".jpg,.jpeg,.png"
                     className="hidden"
                     onChange={handleImageChange}
                   />
                 </label>
-              </div>
+              </div> */}
 
             </div>
           </div>
