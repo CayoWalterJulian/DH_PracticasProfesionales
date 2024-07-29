@@ -3,6 +3,7 @@ const Aspirant = require('../../database/models/Aspirant');
 const sequelize = db.sequelize;
 
 const dataController = {
+    
     list: async (req, res) => {
         try {
             const aspirant = await db.Aspirant.findAll();
@@ -10,7 +11,7 @@ const dataController = {
             const response = {
                 count: aspirant.length,
                 aspirant: aspirant.map(aspirant => ({
-                    DNI: aspirant.DNI,
+                    DNItt: aspirant.DNI,
                     name: aspirant.name,
                     lastname: aspirant.lastname,
                     email: aspirant.email,
@@ -52,7 +53,6 @@ const dataController = {
                 profession: req.params.profession
             },
             order: [
-
                 ['profession', 'ASC']
             ]
         })
