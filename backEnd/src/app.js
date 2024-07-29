@@ -20,6 +20,7 @@ const  userRoutes = require("./routes/userRoutes")
  const apiProfessionsRouter = require('./routes/api/professions');
  const apiAreasRouter = require('./routes/api/areas');
  const apiSearchRouter = require('./routes/api/search');
+ const apiUserRouter = require('./routes/api/user');
 // //Aquí llamo a la ruta de las api de actors
 // const apiGenresRouter = require('./routes/api/genres')
 // //Aquí llamo a la ruta de las api de actors
@@ -54,7 +55,7 @@ app.use('/api/aspirants',apiAspirantsRouter);
 app.use('/api/professions',apiProfessionsRouter);
 app.use('/api/areas',apiAreasRouter);
 app.use('/api/search',apiSearchRouter);
-
+app.use('/api/user',apiUserRouter);
 
 //Activando el servidor desde express
 app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));
