@@ -3,6 +3,7 @@ const Aspirant = require('../../database/models/Aspirant');
 const sequelize = db.sequelize;
 
 const dataController = {
+
     // List all aspirants
     list: async (req, res) => {
         try {
@@ -22,13 +23,13 @@ const dataController = {
                     profession: aspirant.profession,
                     image: `${req.protocol}://${req.get('host')}/img/aspirants/${aspirant.image}`,
                     study: aspirant.study_level,
-                    cv: aspirant.CV,
                     time: aspirant.time_availibity
                 })),
                 status: 200
             };
             res.json(response);
         } catch (error) {
+
             console.error("Error fetching aspirants", error);
             res.status(500).json({ error: "Internal server error" });
         }
@@ -93,6 +94,7 @@ const dataController = {
             res.status(500).json({ error: "Internal server error" });
         });
     }
+
 }
 
 
