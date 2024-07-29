@@ -1,5 +1,7 @@
 const path = require('path');
 const db = require('./../database/models');
+const { Sequelize } = require('sequelize');
+Op = Sequelize.Op;
 
 
 
@@ -50,6 +52,21 @@ const userController = {
             }
         })
         res.redirect ("/user")
+    },
+    login: (req,res) => {
+        return res.render('login');
+    },
+    processLogin: (req,res) => {
+            db.User.findAll({
+                where: {
+                    [Op.and]:
+                    [{email: req.params.email},
+                     {password: req.params.password}]
+                }
+            }).then(user=> {
+                //req.session.usuarioLogueado = user;
+                res.render('/', {user : user})
+            })
     }
     }
 module.exports = userController;

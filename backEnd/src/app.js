@@ -3,6 +3,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
 const cors = require('cors');
+var session = require('express-session');
 
 
 //Ejecuto el llamado a mis rutas
@@ -40,6 +41,12 @@ app.use(express.urlencoded({ extended: false }));
 
 //Aquí estoy disponiendo la posibilidad para utilizar el seteo en los formularios para el usod e los metodos put ó delete
 app.use(methodOverride('_method'));
+
+app.use(session ({
+    secret: 'SECRETO!!!',
+   resave: false,
+   saveUninitialized:false,
+  }));
 
 app.use('/', indexRouter);
 app.use('/lenguage', lenguageRoutes);

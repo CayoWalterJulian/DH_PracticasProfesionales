@@ -15,5 +15,7 @@ router.get("/:user_id", userController.detail);
 router.post("/edit/:user_id", userController.update)
 
 
+router.get('/login', userController.login);
+router.post('/login',userController.processLogin);
 
 module.exports = router;
