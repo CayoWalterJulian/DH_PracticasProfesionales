@@ -123,7 +123,8 @@ Para contribuir a este proyecto:
 
 ## Autores
 
-* Tu Nombre - [Tu GitHub](https://github.com/tu-usuario)
+* (https://github.com/NatanielCZN)
+* 
 
 ## Licencia
 
