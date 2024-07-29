@@ -9,7 +9,6 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const Op = db.sequelize.Op;
 
-
 const controller = {
     //Show all aspirants
     index: (req, res) => {
@@ -33,6 +32,7 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		console.log(req.body);
+        console.log(req.file);
 		db.Aspirant.create ({
                 DNI: req.body.DNI,
 				name: req.body.name,
@@ -44,11 +44,11 @@ const controller = {
 				gender: req.body.gender,
 				country_residence: req.body.country_residence,
 				profession: req.body.profession,
-				image: req.body.image,
+				image: req.file.filename,
 				study_level: req.body.study_level,
 				time_availibity: req.body.time_availibity                
 			}).then(() =>
-				res.redirect('/'));
+				res.redirect('http://localhost:5173/'));
 	},
 	// Update - Form to edit
 	edit: (req, res) => {

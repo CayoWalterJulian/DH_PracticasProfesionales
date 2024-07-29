@@ -22,7 +22,7 @@ function Postulate() {
 
   return (
     <div className='purple'>
-      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action="http://localhost:3001/aspirant/store" method="POST" >
+      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action="http://localhost:3001/aspirant/store" method="POST" encType="multipart/form-data">
         <div className="space-y-6">
           <div className='relative'>
             <img src={image_form} alt="image_form" className="rounded-xl w-full h-full object-cover" />
@@ -406,7 +406,7 @@ function Postulate() {
               </div>
 
               <div className="col-span-full flex items-center justify-center w-full">
-                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed ounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200 hover:rounded-md">
+                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200 hover:rounded-md">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     {imageSrc ? (
                       <img src={imageSrc} alt="Imagen cargada" className="h-24 w-24 object-cover rounded-full mb-6" />
