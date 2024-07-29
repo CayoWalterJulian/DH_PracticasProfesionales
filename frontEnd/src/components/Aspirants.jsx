@@ -1,43 +1,46 @@
 import React from 'react';
 import { CiStar } from "react-icons/ci";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const aspirantsData = [
-  {
-    id: 1,
-    name: "Juan Perez",
-    profession: "Profesión 1",
-    banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
-    photo: "https://www.modelos-de-curriculum.com/wp-content/uploads/2020/10/foto-para-curriculum-vitae.jpg",
-    email: "36350945@fi.unju.edu.ar"
-  },
-  {
-    id: 2,
-    name: "Nombre del Aspirante 2",
-    profession: "Profesión 2",
-    banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_k2zHErZ3RQ8BvyFjdZxsgsFp1tasas-nZA&s",
-    email: "36350945@fi.unju.edu.ar" 
-  },
-  {
-    id: 3,
-    name: "Nombre del Aspirante 2",
-    profession: "Profesión 2",
-    banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_k2zHErZ3RQ8BvyFjdZxsgsFp1tasas-nZA&s",
-    email: "36350945@fi.unju.edu.ar" 
-  },
-  {
-    id: 4,
-    name: "Nombre del Aspirante 2",
-    profession: "Profesión 2",
-    banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_k2zHErZ3RQ8BvyFjdZxsgsFp1tasas-nZA&s",
-    email: "36350945@fi.unju.edu.ar" 
-  }
-];
+// const aspirantsData = [
+//   {
+//     id: 1,
+//     name: "Juan Perez",
+//     profession: "Profesión 1",
+//     banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
+//     photo: "https://www.modelos-de-curriculum.com/wp-content/uploads/2020/10/foto-para-curriculum-vitae.jpg",
+//     email: "36350945@fi.unju.edu.ar"
+//   },
+//   {
+//     id: 2,
+//     name: "Nombre del Aspirante 2",
+//     profession: "Profesión 2",
+//     banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
+//     photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_k2zHErZ3RQ8BvyFjdZxsgsFp1tasas-nZA&s",
+//     email: "36350945@fi.unju.edu.ar" 
+//   },
+//   {
+//     id: 3,
+//     name: "Nombre del Aspirante 2",
+//     profession: "Profesión 2",
+//     banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
+//     photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_k2zHErZ3RQ8BvyFjdZxsgsFp1tasas-nZA&s",
+//     email: "36350945@fi.unju.edu.ar" 
+//   },
+//   {
+//     id: 4,
+//     name: "Nombre del Aspirante 2",
+//     profession: "Profesión 2",
+//     banner: "https://media.sproutsocial.com/uploads/5D-LinkedIn-Personal-Blank.png", 
+//     photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_k2zHErZ3RQ8BvyFjdZxsgsFp1tasas-nZA&s",
+//     email: "36350945@fi.unju.edu.ar" 
+//   }
+// ];
 
-const Aspirants = () => {
+const aspirantsData = await axios.get('http://localhost:3001/api/aspirants/');
+
+const Aspirants = (aspirantsData) => {
   return (
     <div className="bg-[#d8cfc4] p-4 min-h-screen">
       <h1 className="text-left text-2xl font-bold mb-4 flex justify-center text-gray-800 md:text-3xl lg:text-4xl">Todos los aspirantes</h1>
