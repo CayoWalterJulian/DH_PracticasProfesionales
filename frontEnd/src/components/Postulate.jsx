@@ -22,7 +22,7 @@ function Postulate() {
 
   return (
     <div className='purple'>
-      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action='' method='POST' >
+      <form className='p-4 pt-8 max-w-screen-lg mx-auto' action="http://localhost:3001/aspirant/store" method="POST" encType="multipart/form-data">
         <div className="space-y-6">
           <div className='relative'>
             <img src={image_form} alt="image_form" className="rounded-xl w-full h-full object-cover" />
@@ -33,7 +33,7 @@ function Postulate() {
               <img src={logo_arh} alt="logo_arh" className='w-20 h-10 sm:w-24 sm:h-12 md:w-32 md:h-16 lg:w-40 lg:h-20 xl:w-48 xl:h-24 object-contain' />
             </div>
           </div>
-          
+
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900 flex items-center">Formulario de Postulacion <FaWpforms className='text-2xl ml-2' /></h2>
 
@@ -41,7 +41,7 @@ function Postulate() {
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-3">
-                <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
                   Nombre <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2">
@@ -49,7 +49,7 @@ function Postulate() {
                     id="name"
                     name="name"
                     type="text"
-                    autoComplete="given-name"
+                    autoComplete="name"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
@@ -71,6 +71,21 @@ function Postulate() {
               </div>
 
               <div className="sm:col-span-3">
+                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                  Correo <span className='text-red-400'>*</span>
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                  />
+                </div>
+              </div>
+
+              <div className="sm:col-span-3">
                 <label htmlFor="DNI" className="block text-sm font-medium leading-6 text-gray-900">
                   DNI <span className='text-red-400'>*</span>
                 </label>
@@ -78,7 +93,7 @@ function Postulate() {
                   <input
                     id="DNI"
                     name="DNI"
-                    type="text"
+                    type="number"
                     autoComplete="DNI"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
@@ -126,7 +141,7 @@ function Postulate() {
                     autoComplete="country_residence"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected disabled>Seleccionar...</option>
                     <option value="argentina">Argentina</option>
                     <option value="bahamas">Bahamas</option>
                     <option value="barbados">Barbados</option>
@@ -195,7 +210,7 @@ function Postulate() {
                     autoComplete="gender"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected disabled>Seleccionar...</option>
                     <option value="female">Femenino</option>
                     <option value="male">Masculino</option>
                     <option value="other">Otro</option>
@@ -218,7 +233,7 @@ function Postulate() {
                     autoComplete="profession"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected disabled>Seleccionar...</option>
                     <option value="doctor">Doctor</option>
                     <option value="engineer">Ingeniero</option>
                     <option value="teacher">Maestro</option>
@@ -258,7 +273,7 @@ function Postulate() {
                     autoComplete="preference-area"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected  disabled>Seleccionar...</option>
                     <option value="technology">Tecnología</option>
                     <option value="healthcare">Salud</option>
                     <option value="education">Educación</option>
@@ -298,7 +313,7 @@ function Postulate() {
                     autoComplete="idioma"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected disabled>Seleccionar...</option>
                     <optgroup label='Ingles'>
                       <option value="english_basic">Básico</option>
                       <option value="english_intermediate">Intermedio</option>
@@ -337,25 +352,28 @@ function Postulate() {
               </div> */}
 
               <div className="sm:col-span-3">
-                <label htmlFor="study-level" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="study_level" className="block text-sm font-medium leading-6 text-gray-900">
                   Nivel de estudio <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2 relative">
                   <select
-                    id="study-level"
-                    name="study-level"
-                    autoComplete="study-level"
+                    id="study_level"
+                    name="study_level"
+                    autoComplete="study_level"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected disabled>Seleccionar...</option>
                     <option value="primaria">Primaria</option>
                     <option value="secundaria">Secundaria</option>
                     <option value="bachillerato">Bachillerato</option>
                     <option value="tecnico">Técnico</option>
+                    <option value="terciario">Terciario</option>
+                    <option value="universitario">Universitario</option>
                     <option value="licenciatura">Licenciatura</option>
                     <option value="maestria">Maestría</option>
                     <option value="doctorado">Doctorado</option>
                     <option value="postdoctorado">Postdoctorado</option>
+                    <option value="posgrado">Posgrado</option>
                   </select>
 
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -366,17 +384,17 @@ function Postulate() {
 
 
               <div className="sm:col-span-3">
-                <label htmlFor="time-availability" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="time_availibity" className="block text-sm font-medium leading-6 text-gray-900">
                   Tiempo disponible <span className='text-red-400'>*</span>
                 </label>
                 <div className="mt-2 relative">
                   <select
-                    id="time-availability"
-                    name="time-availability"
-                    autoComplete="time-availability"
+                    id="time_availibity"
+                    name="time_availibity"
+                    autoComplete="time_availibity"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
                   >
-                    <option selected disabled>Seleccionar...</option>
+                    <option value="" selected disabled>Seleccionar...</option>
                     <option value="full_time">Tiempo completo</option>
                     <option value="part_time">Tiempo parcial</option>
                   </select>
@@ -387,26 +405,11 @@ function Postulate() {
                 </div>
               </div>
 
-              <div className="sm:col-span-3">
-                <label htmlFor="image" className="block text-sm font-medium leading-6 text-gray-900">
-                  Imagen <span className='text-red-400'>*</span>
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="image"
-                    name="image"
-                    type="text"
-                    autoComplete="image"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                  />
-                </div>
-              </div>
-
-              {/* <div className="col-span-full flex items-center justify-center w-full">
-                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed ounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200">
+              <div className="col-span-full flex items-center justify-center w-full">
+                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200 hover:rounded-md">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     {imageSrc ? (
-                      <img src={imageSrc} alt="Uploaded" className="h-24 w-24 object-cover rounded-full mb-6" />
+                      <img src={imageSrc} alt="Imagen cargada" className="h-24 w-24 object-cover rounded-full mb-6" />
                     ) : (
                       <>
                         <AiOutlinePicture className='h-24 w-24 dark:text-gray-300 mb-6' />
@@ -425,7 +428,7 @@ function Postulate() {
                     onChange={handleImageChange}
                   />
                 </label>
-              </div> */}
+              </div>
 
             </div>
           </div>
