@@ -123,8 +123,13 @@ Para contribuir a este proyecto:
 
 ## Autores
 
-* (https://github.com/NatanielCZN)
-* 
+•	https://github.com/NatanielCZN
+•	https://github.com/andresS16
+•	https://github.com/carlamv221
+•	https://github.com/CayoWalterJulian
+•	https://github.com/marisolpatri77
+•	https://github.com/JoaquinZerpa
+•	https://github.com/Georgi2024
 
 ## Licencia
 
