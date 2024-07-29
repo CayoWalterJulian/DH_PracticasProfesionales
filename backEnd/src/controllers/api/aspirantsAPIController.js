@@ -3,7 +3,7 @@ const Aspirant = require('../../database/models/Aspirant');
 const sequelize = db.sequelize;
 
 const dataController = {
-    
+
     list: async (req, res) => {
         try {
             const aspirant = await db.Aspirant.findAll();
@@ -30,8 +30,8 @@ const dataController = {
             };
             res.json(response)
         } catch (error) {
-            console.error("Error al obtener la lista de productos", error);
-            res.status(500).json({error: "No se pudo obtener la lista de productos"});
+            console.error("Error al obtener la lista de aspirantes", error);
+            res.status(500).json({error: "No se pudo obtener la lista de aspirantes"});
         }
     } ,
     /*
