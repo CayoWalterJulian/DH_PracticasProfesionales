@@ -101,7 +101,7 @@ El proyecto se divide en tres partes:
    ```bash
    npm run dev
    ```
-3. # Reaccionar + Vite
+3. ** React + Vite
 
 Esta plantilla proporciona una configuración mínima para que React funcione en Vite con HMR y algunas reglas de ESLint.
 
