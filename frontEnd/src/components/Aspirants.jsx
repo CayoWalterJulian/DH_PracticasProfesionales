@@ -37,7 +37,7 @@ const Aspirants = () => {
             </div>
             <div className="text-center">
               <p className="font-bold mt-8 md:mt-10 lg:mt-12">{aspirant.name} {aspirant.lastname}</p>
-              <p className="text-gray-600 mt-2 md:mt-4 lg:mt-4">{aspirant.profesion}</p>
+              <p className="text-gray-600 mt-2 md:mt-4 lg:mt-4">{aspirant.profession}</p>
             </div>
             <div className='flex justify-center mt-2 md:mt-6'>
               <CiStar className='size-4 md:size-5 text-gray-500' />
