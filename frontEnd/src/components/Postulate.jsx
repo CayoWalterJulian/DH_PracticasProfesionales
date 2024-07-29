@@ -5,7 +5,6 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { FaWpforms } from "react-icons/fa";
 import logo_arh from "../assets/images/logo-arh.png";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 function Postulate() {
   const [imageSrc, setImageSrc] = useState(null);
@@ -20,38 +19,6 @@ function Postulate() {
       reader.readAsDataURL(file);
     }
   };
-
-  // const [post, setPost] = useState({
-  //   DNI: '',
-  //   name: '',
-  //   lastname: '',
-  //   phone: '',
-  //   linkedin: '',
-  //   birthdate: '',
-  //   gender: '',
-  //   country_residence: '',
-  //   profession: '',
-  //   image: '',
-  //   study_level: '',
-  //   time_availibity: ''
-  // })
-
-  // const handleInput = (e) => {
-  //   const { name, value } = e.target;
-  //   setPost({
-  //     ...post,
-  //     [name]: value,
-  //   });
-  // };
-
-  // function handleSubmit(event) {
-  //   console.log(post);
-
-  //   event.preventDefault()
-  //   axios.post('http://localhost:3001/aspirant/store', { post })
-  //     .then(response => console.log(response))
-  //     .catch(error => console.log(error))
-  // }
 
   return (
     <div className='purple'>
@@ -84,7 +51,6 @@ function Postulate() {
                     type="text"
                     autoComplete="name"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
                   />
                 </div>
               </div>
@@ -100,7 +66,21 @@ function Postulate() {
                     type="text"
                     autoComplete="lastname"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
+                  />
+                </div>
+              </div>
+
+              <div className="sm:col-span-3">
+                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                  Correo <span className='text-red-400'>*</span>
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
                   />
                 </div>
               </div>
@@ -116,7 +96,6 @@ function Postulate() {
                     type="number"
                     autoComplete="DNI"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
                   />
                 </div>
               </div>
@@ -132,7 +111,6 @@ function Postulate() {
                     type="text"
                     autoComplete="phone"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
                   />
                 </div>
               </div>
@@ -148,7 +126,6 @@ function Postulate() {
                     type="text"
                     autoComplete="linkedin"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
                   />
                 </div>
               </div>
@@ -163,7 +140,6 @@ function Postulate() {
                     name="country_residence"
                     autoComplete="country_residence"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
-                    // onChange={handleInput}
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="argentina">Argentina</option>
@@ -219,7 +195,6 @@ function Postulate() {
                     type="date"
                     autoComplete="birthdate"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
                   />
                 </div>
               </div>
@@ -234,7 +209,6 @@ function Postulate() {
                     name="gender"
                     autoComplete="gender"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
-                    // onChange={handleInput}
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="female">Femenino</option>
@@ -258,7 +232,6 @@ function Postulate() {
                     name="profession"
                     autoComplete="profession"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
-                    // onChange={handleInput}
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="doctor">Doctor</option>
@@ -388,17 +361,19 @@ function Postulate() {
                     name="study_level"
                     autoComplete="study_level"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
-                    // onChange={handleInput}
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="primaria">Primaria</option>
                     <option value="secundaria">Secundaria</option>
                     <option value="bachillerato">Bachillerato</option>
                     <option value="tecnico">Técnico</option>
+                    <option value="terciario">Terciario</option>
+                    <option value="universitario">Universitario</option>
                     <option value="licenciatura">Licenciatura</option>
                     <option value="maestria">Maestría</option>
                     <option value="doctorado">Doctorado</option>
                     <option value="postdoctorado">Postdoctorado</option>
+                    <option value="posgrado">Posgrado</option>
                   </select>
 
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -418,7 +393,6 @@ function Postulate() {
                     name="time_availibity"
                     autoComplete="time_availibity"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
-                    // onChange={handleInput}
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="full_time">Tiempo completo</option>
@@ -431,27 +405,11 @@ function Postulate() {
                 </div>
               </div>
 
-              <div className="sm:col-span-3">
-                <label htmlFor="image" className="block text-sm font-medium leading-6 text-gray-900">
-                  Imagen <span className='text-red-400'>*</span>
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="image"
-                    name="image"
-                    type="text"
-                    autoComplete="image"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
-                    // onChange={handleInput}
-                  />
-                </div>
-              </div>
-
-              {/* <div className="col-span-full flex items-center justify-center w-full">
-                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed ounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200">
+              <div className="col-span-full flex items-center justify-center w-full">
+                <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-900/10 border-dashed ounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-200 dark:border-gray-00 dark:hover:border-gray-300 dark:hover:bg-gray-200 hover:rounded-md">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     {imageSrc ? (
-                      <img src={imageSrc} alt="Uploaded" className="h-24 w-24 object-cover rounded-full mb-6" />
+                      <img src={imageSrc} alt="Imagen cargada" className="h-24 w-24 object-cover rounded-full mb-6" />
                     ) : (
                       <>
                         <AiOutlinePicture className='h-24 w-24 dark:text-gray-300 mb-6' />
@@ -470,7 +428,7 @@ function Postulate() {
                     onChange={handleImageChange}
                   />
                 </label>
-              </div> */}
+              </div>
 
             </div>
           </div>
