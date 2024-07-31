@@ -2,9 +2,14 @@ const express = require('express');
 const router = express.Router();
 const aspirantsAPIController = require('../../controllers/api/aspirantsAPIController');
 
-//Rutas
+// Ruta para obtener todos los aspirantes
 router.get('/', aspirantsAPIController.list);
-//GET aspirants by profession
-router.get('/:profession', aspirantsAPIController.listByProfession);
+
+// Ruta para obtener aspirantes por profesión (si todavía la necesitas)
+router.get('/profession/:profession', aspirantsAPIController.listByProfession);
+
+// Ruta para obtener un aspirante por DNI
+router.get('/:DNI', aspirantsAPIController.getByDNI);
+
 
 module.exports = router;

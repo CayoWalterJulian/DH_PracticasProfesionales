@@ -1,26 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+
+function Login({ setIsAuthenticated, isAuthenticated }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    setIsAuthenticated(true);
+  };
+
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-[#d8cfc4]">
+      <div className="bg-white p-8 rounded shadow-md w-full max-w-md mt-20">
+        <h2 className="text-2xl font-bold mb-6 text-center">Iniciar sesión</h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Correo Electrónico <span className='text-red-400'>*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Contraseña <span className='text-red-400'>*</span>
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autoComplete="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Iniciar sesión
+            </button>
+            <Link to="/" className="text-sm font-semibold leading-6 text-gray-900">
+              Cancelar
+            </Link>
+          </div>
+        </form>
+        <div className="mt-4 text-center">
+          <p className="text-gray-700">
+            ¿No tienes una cuenta? <Link to="/register" className="text-blue-500 hover:text-blue-800">Regístrate</Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Login;
+
+{/*import React from 'react';
 import image_form from "../assets/images/image-form.png";
 import { CgProfile } from "react-icons/cg";
 import logo_arh from "../assets/images/logo-arh.png";
 import { Link } from 'react-router-dom';
-// =======
-// import React, { useState } from 'react';
-// import { Link, Navigate } from 'react-router-dom';
-
-// function Login({ setIsAuthenticated, isAuthenticated }) {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleLogin = (event) => {
-//     event.preventDefault();
-//     // Aquí puedes agregar la lógica para manejar el inicio de sesión
-//     setIsAuthenticated(true); // Simulación de autenticación exitosa
-//   };
-
-//   if (isAuthenticated) {
-//     return <Navigate to="/" />;
-//   }
-// >>>>>>> master
 function Login() {
   return (
     <div className='purple'>
@@ -89,53 +146,6 @@ function Login() {
       </form>
     </div>
   )
-  // =======
-  //     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-  //       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-  //         <h2 className="text-2xl font-bold mb-6 text-center">Inicia sesión</h2>
-  //         <form onSubmit={handleLogin}>
-  //           <div className="mb-4">
-  //             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-  //               Correo Electrónico
-  //             </label>
-  //             <input
-  //               type="email"
-  //               id="email"
-  //               value={email}
-  //               onChange={(e) => setEmail(e.target.value)}
-  //               className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
-  //               required
-  //             />
-  //           </div>
-  //           <div className="mb-4">
-  //             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-  //               Contraseña
-  //             </label>
-  //             <input
-  //               type="password"
-  //               id="password"
-  //               value={password}
-  //               onChange={(e) => setPassword(e.target.value)}
-  //               className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
-  //               required
-  //             />
-  //           </div>
-  //           <div className="flex items-center justify-between">
-  //             <button
-  //               type="submit"
-  //               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-  //             >
-  //               Inicia sesión
-  //             </button>
-  //           </div>
-  //         </form>
-  //         <div className="mt-4 text-center">
-  //           <p className="text-gray-700">¿No tienes una cuenta? <Link to="/register" className="text-blue-500 hover:text-blue-800">Regístrate</Link></p>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // >>>>>>> master
 }
 
-export default Login;
+export default Login; */}
