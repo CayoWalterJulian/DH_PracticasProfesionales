@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaSearch, FaUserFriends, FaBriefcase } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import logo from '../assets/img/logo-dh.png'; 
+import logo from '../assets/img/logo1-blanco.png'; 
 import backgroundImage from '../assets/img/banner.jpg'; 
 import { FaHandshake } from "react-icons/fa6";
 

@@ -5,7 +5,7 @@ Para instalar el proyecto, basado en los requisitos y objetivos que hemos propor
 
 ---
 
-# Trabajo Integrador - Sprint
+# Trabajo Integrador - Sprint (https://drive.google.com/file/d/1HJAq7TcuDcLHKkbvvKveVSRJfwm8Erlw/view)
 
 ## Introducción
 
@@ -73,6 +73,7 @@ El proyecto se divide en tres partes:
 **Entregable:** URLs funcionales devolviendo datos en formato JSON.
 
 ## Instalación y Configuración
+## fuente principal utilizada  - https://fonts.google.com/specimen/Open+Sans
 
 ### Configuración del Backend
 
@@ -110,7 +111,10 @@ Actualmente, hay dos complementos oficiales disponibles:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) usa [Babel](https://babeljs .io/) para actualización rápida
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) usa [SWC](https://swc.rs/) para actualización rápida
   
-## Contribución
+4. ** FIGMA
+  https://github.com/CayoWalterJulian/DH_PracticasProfesionales
+  
+## Contribución con nuestro proyecto - link (https://github.com/CayoWalterJulian/DH_PracticasProfesionales)
 
 Para contribuir a este proyecto:
 
@@ -138,3 +142,5 @@ Este proyecto está bajo la Licencia ISC. Para más detalles, consulta el archiv
 ---
 
 Este `README.md` proporciona una visión general clara del proyecto, instrucciones de configuración y cómo contribuir. Asegúrate de actualizar la información de contacto y licencias según corresponda. 
+## COMPROMISO DE TRABAJO - TRELLO
+https://trello.com/b/ddW11gfS/grupo-8-practica-profecional

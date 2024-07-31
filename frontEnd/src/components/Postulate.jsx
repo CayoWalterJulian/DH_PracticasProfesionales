@@ -51,6 +51,7 @@ function Postulate() {
                     type="text"
                     autoComplete="name"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -66,6 +67,7 @@ function Postulate() {
                     type="text"
                     autoComplete="lastname"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -81,6 +83,7 @@ function Postulate() {
                     type="email"
                     autoComplete="email"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -96,6 +99,7 @@ function Postulate() {
                     type="number"
                     autoComplete="DNI"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -111,6 +115,7 @@ function Postulate() {
                     type="text"
                     autoComplete="phone"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -126,6 +131,7 @@ function Postulate() {
                     type="text"
                     autoComplete="linkedin"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -140,6 +146,7 @@ function Postulate() {
                     name="country_residence"
                     autoComplete="country_residence"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
+                    required
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="argentina">Argentina</option>
@@ -195,6 +202,7 @@ function Postulate() {
                     type="date"
                     autoComplete="birthdate"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6 px-2"
+                    required
                   />
                 </div>
               </div>
@@ -209,6 +217,7 @@ function Postulate() {
                     name="gender"
                     autoComplete="gender"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
+                    required
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="female">Femenino</option>
@@ -232,28 +241,29 @@ function Postulate() {
                     name="profession"
                     autoComplete="profession"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
+                    required
                   >
                     <option value="" selected disabled>Seleccionar...</option>
-                    <option value="doctor">Doctor</option>
-                    <option value="engineer">Ingeniero</option>
-                    <option value="teacher">Maestro</option>
-                    <option value="lawyer">Abogado</option>
-                    <option value="nurse">Enfermero</option>
-                    <option value="architect">Arquitecto</option>
-                    <option value="scientist">Científico</option>
-                    <option value="artist">Artista</option>
-                    <option value="chef">Chef</option>
-                    <option value="journalist">Periodista</option>
-                    <option value="mechanic">Mecánico</option>
-                    <option value="pilot">Piloto</option>
-                    <option value="programmer">Programador</option>
-                    <option value="photographer">Fotógrafo</option>
-                    <option value="dentist">Dentista</option>
-                    <option value="pharmacist">Farmacéutico</option>
-                    <option value="plumber">Fontanero</option>
-                    <option value="electrician">Electricista</option>
-                    <option value="carpenter">Carpintero</option>
-                    <option value="accountant">Contador</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Ingeniero">Ingeniero</option>
+                    <option value="Maestro">Maestro</option>
+                    <option value="Abogado">Abogado</option>
+                    <option value="Enfermero">Enfermero</option>
+                    <option value="Arquitecto">Arquitecto</option>
+                    <option value="Científico">Científico</option>
+                    <option value="Artista">Artista</option>
+                    <option value="Chef">Chef</option>
+                    <option value="Periodista">Periodista</option>
+                    <option value="Mecánico">Mecánico</option>
+                    <option value="Piloto">Piloto</option>
+                    <option value="Programador">Programador</option>
+                    <option value="Fotógrafo">Fotógrafo</option>
+                    <option value="Dentista">Dentista</option>
+                    <option value="Farmacéutico">Farmacéutico</option>
+                    <option value="Fontanero">Fontanero</option>
+                    <option value="Electricista">Electricista</option>
+                    <option value="Carpintero">Carpintero</option>
+                    <option value="Contador">Contador</option>
                   </select>
 
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -361,6 +371,7 @@ function Postulate() {
                     name="study_level"
                     autoComplete="study_level"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
+                    required
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="primaria">Primaria</option>
@@ -393,6 +404,7 @@ function Postulate() {
                     name="time_availibity"
                     autoComplete="time_availibity"
                     className="block w-full appearance-none rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 sm:text-sm sm:leading-6"
+                    required
                   >
                     <option value="" selected disabled>Seleccionar...</option>
                     <option value="full_time">Tiempo completo</option>
@@ -426,6 +438,7 @@ function Postulate() {
                     accept=".jpg,.jpeg,.png"
                     className="hidden"
                     onChange={handleImageChange}
+                    required
                   />
                 </label>
               </div>
